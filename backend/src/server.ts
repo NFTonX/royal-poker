@@ -111,6 +111,10 @@ app.get('/api/leaderboard', (req, res) => {
   res.json(db.getLeaderboard(20));
 });
 
+app.get('/api/tables', (req, res) => {
+  res.json(tableManager.getTableList());
+});
+
 // Serve frontend build if exists
 const frontendDist = path.resolve(__dirname, '../../frontend/dist');
 if (fs.existsSync(frontendDist)) {
