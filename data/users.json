@@ -1,0 +1,5707 @@
+[
+  {
+    "id": "6968710985",
+    "username": "BtcOfficiaI",
+    "firstName": "Arman",
+    "chips": 13540,
+    "handsPlayed": 16,
+    "handsWon": 9,
+    "lastDailyBonus": 1789910198444,
+    "purchases": [],
+    "referralCount": 1,
+    "referralEarnings": 2500,
+    "invitedFriends": [
+      {
+        "id": "8046577374",
+        "name": "Dasyntac",
+        "date": 1789910936849,
+        "bonus": 2500
+      }
+    ],
+    "xp": 2790,
+    "level": 5,
+    "currentStreak": 0,
+    "bestStreak": 6,
+    "biggestWin": 3160,
+    "biggestPotWon": 3180,
+    "quests": {
+      "daily_hands_10": {
+        "progress": 10,
+        "completed": true,
+        "claimed": true
+      },
+      "weekly_hands_50": {
+        "progress": 16,
+        "completed": false,
+        "claimed": false
+      },
+      "daily_wins_3": {
+        "progress": 3,
+        "completed": true,
+        "claimed": true
+      },
+      "weekly_wins_15": {
+        "progress": 9,
+        "completed": false,
+        "claimed": false
+      }
+    },
+    "achievements": {
+      "first_win": {
+        "unlockedAt": 1789914908942,
+        "progress": 1
+      },
+      "invite_friend": {
+        "unlockedAt": 1789914908945,
+        "progress": 1
+      },
+      "streak_3": {
+        "unlockedAt": 1789914965712,
+        "progress": 3
+      },
+      "streak_5": {
+        "unlockedAt": 1789914988672,
+        "progress": 5
+      },
+      "hands_10": {
+        "unlockedAt": 1789915016574,
+        "progress": 10
+      },
+      "level_5": {
+        "unlockedAt": 1789915612020,
+        "progress": 5
+      }
+    },
+    "seasonXp": 2790,
+    "seasonLevel": 1,
+    "claimedSeasonTiers": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      5,
+      7
+    ],
+    "inventory": [
+      "card_sapphire",
+      "frame_bronze",
+      "table_emerald",
+      "card_crimson",
+      "frame_silver",
+      "card_emerald",
+      "table_midnight"
+    ],
+    "equipped": {
+      "cardBack": "card_emerald",
+      "avatarFrame": "frame_silver",
+      "tableTheme": "table_midnight"
+    },
+    "handHistory": [
+      {
+        "id": "hand_1789916013382_zwolu",
+        "timestamp": 1789916013382,
+        "tableId": "table_practice",
+        "tableName": "🎮 Тренировка с Ботами",
+        "smallBlind": 10,
+        "bigBlind": 20,
+        "communityCards": [
+          {
+            "rank": "J",
+            "suit": "s",
+            "code": "Js"
+          },
+          {
+            "rank": "K",
+            "suit": "d",
+            "code": "Kd"
+          },
+          {
+            "rank": "5",
+            "suit": "c",
+            "code": "5c"
+          },
+          {
+            "rank": "3",
+            "suit": "c",
+            "code": "3c"
+          },
+          {
+            "rank": "8",
+            "suit": "s",
+            "code": "8s"
+          }
+        ],
+        "myHoleCards": [],
+        "result": "LOSS",
+        "netChips": 0,
+        "pot": 160,
+        "actionLog": [
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "bot_1",
+            "playerName": "Алексей 🤖",
+            "action": "BET",
+            "amount": 10,
+            "pot": 10
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 3,
+            "playerId": "bot_2",
+            "playerName": "Елена 🤖",
+            "action": "BET",
+            "amount": 20,
+            "pot": 30
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "bot_1",
+            "playerName": "Алексей 🤖",
+            "action": "CALL",
+            "amount": 10,
+            "pot": 40
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 3,
+            "playerId": "bot_2",
+            "playerName": "Елена 🤖",
+            "action": "BET",
+            "amount": 40,
+            "pot": 60
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "bot_1",
+            "playerName": "Алексей 🤖",
+            "action": "CALL",
+            "amount": 20,
+            "pot": 80
+          },
+          {
+            "stage": "FLOP",
+            "seatIndex": 3,
+            "playerId": "bot_2",
+            "playerName": "Елена 🤖",
+            "action": "CHECK",
+            "pot": 80
+          },
+          {
+            "stage": "FLOP",
+            "seatIndex": 1,
+            "playerId": "bot_1",
+            "playerName": "Алексей 🤖",
+            "action": "CHECK",
+            "pot": 80
+          },
+          {
+            "stage": "TURN",
+            "seatIndex": 3,
+            "playerId": "bot_2",
+            "playerName": "Елена 🤖",
+            "action": "BET",
+            "amount": 20,
+            "pot": 100
+          },
+          {
+            "stage": "TURN",
+            "seatIndex": 1,
+            "playerId": "bot_1",
+            "playerName": "Алексей 🤖",
+            "action": "CALL",
+            "amount": 20,
+            "pot": 120
+          },
+          {
+            "stage": "RIVER",
+            "seatIndex": 3,
+            "playerId": "bot_2",
+            "playerName": "Елена 🤖",
+            "action": "BET",
+            "amount": 20,
+            "pot": 140
+          },
+          {
+            "stage": "RIVER",
+            "seatIndex": 1,
+            "playerId": "bot_1",
+            "playerName": "Алексей 🤖",
+            "action": "CALL",
+            "amount": 20,
+            "pot": 160
+          }
+        ],
+        "winners": [
+          {
+            "playerId": "bot_2",
+            "playerName": "Елена 🤖",
+            "amount": 160,
+            "handName": "A High",
+            "handRank": 1,
+            "bestCards": [
+              {
+                "rank": "A",
+                "suit": "s",
+                "code": "As"
+              },
+              {
+                "rank": "K",
+                "suit": "d",
+                "code": "Kd"
+              },
+              {
+                "rank": "J",
+                "suit": "s",
+                "code": "Js"
+              },
+              {
+                "rank": "8",
+                "suit": "s",
+                "code": "8s"
+              },
+              {
+                "rank": "5",
+                "suit": "c",
+                "code": "5c"
+              }
+            ]
+          }
+        ],
+        "seats": [
+          {
+            "id": "6968710985",
+            "name": "Arman",
+            "seatIndex": 0,
+            "chips": 800,
+            "cards": []
+          },
+          {
+            "id": "bot_1",
+            "name": "Алексей 🤖",
+            "seatIndex": 1,
+            "chips": 1060,
+            "cards": [
+              {
+                "rank": "2",
+                "suit": "h",
+                "code": "2h"
+              },
+              {
+                "rank": "T",
+                "suit": "h",
+                "code": "Th"
+              }
+            ]
+          },
+          {
+            "id": "bot_2",
+            "name": "Елена 🤖",
+            "seatIndex": 3,
+            "chips": 940,
+            "cards": [
+              {
+                "rank": "A",
+                "suit": "s",
+                "code": "As"
+              },
+              {
+                "rank": "2",
+                "suit": "s",
+                "code": "2s"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hand_1789915994663_hubj5",
+        "timestamp": 1789915994664,
+        "tableId": "table_practice",
+        "tableName": "🎮 Тренировка с Ботами",
+        "smallBlind": 10,
+        "bigBlind": 20,
+        "communityCards": [
+          {
+            "rank": "9",
+            "suit": "s",
+            "code": "9s"
+          },
+          {
+            "rank": "2",
+            "suit": "s",
+            "code": "2s"
+          },
+          {
+            "rank": "A",
+            "suit": "h",
+            "code": "Ah"
+          },
+          {
+            "rank": "T",
+            "suit": "d",
+            "code": "Td"
+          },
+          {
+            "rank": "6",
+            "suit": "h",
+            "code": "6h"
+          }
+        ],
+        "myHoleCards": [],
+        "result": "LOSS",
+        "netChips": 0,
+        "pot": 40,
+        "actionLog": [
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 3,
+            "playerId": "bot_2",
+            "playerName": "Елена 🤖",
+            "action": "BET",
+            "amount": 10,
+            "pot": 10
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "bot_1",
+            "playerName": "Алексей 🤖",
+            "action": "BET",
+            "amount": 20,
+            "pot": 30
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 3,
+            "playerId": "bot_2",
+            "playerName": "Елена 🤖",
+            "action": "CALL",
+            "amount": 10,
+            "pot": 40
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "bot_1",
+            "playerName": "Алексей 🤖",
+            "action": "CHECK",
+            "pot": 40
+          },
+          {
+            "stage": "FLOP",
+            "seatIndex": 1,
+            "playerId": "bot_1",
+            "playerName": "Алексей 🤖",
+            "action": "CHECK",
+            "pot": 40
+          },
+          {
+            "stage": "FLOP",
+            "seatIndex": 3,
+            "playerId": "bot_2",
+            "playerName": "Елена 🤖",
+            "action": "CHECK",
+            "pot": 40
+          },
+          {
+            "stage": "TURN",
+            "seatIndex": 1,
+            "playerId": "bot_1",
+            "playerName": "Алексей 🤖",
+            "action": "CHECK",
+            "pot": 40
+          },
+          {
+            "stage": "RIVER",
+            "seatIndex": 1,
+            "playerId": "bot_1",
+            "playerName": "Алексей 🤖",
+            "action": "CHECK",
+            "pot": 40
+          }
+        ],
+        "winners": [
+          {
+            "playerId": "bot_2",
+            "playerName": "Елена 🤖",
+            "amount": 40,
+            "handName": "Pair, 10's",
+            "handRank": 2,
+            "bestCards": [
+              {
+                "rank": "T",
+                "suit": "s",
+                "code": "Ts"
+              },
+              {
+                "rank": "T",
+                "suit": "d",
+                "code": "Td"
+              },
+              {
+                "rank": "A",
+                "suit": "h",
+                "code": "Ah"
+              },
+              {
+                "rank": "9",
+                "suit": "s",
+                "code": "9s"
+              },
+              {
+                "rank": "6",
+                "suit": "h",
+                "code": "6h"
+              }
+            ]
+          }
+        ],
+        "seats": [
+          {
+            "id": "6968710985",
+            "name": "Arman",
+            "seatIndex": 0,
+            "chips": 800,
+            "cards": []
+          },
+          {
+            "id": "bot_1",
+            "name": "Алексей 🤖",
+            "seatIndex": 1,
+            "chips": 1140,
+            "cards": [
+              {
+                "rank": "3",
+                "suit": "h",
+                "code": "3h"
+              },
+              {
+                "rank": "K",
+                "suit": "h",
+                "code": "Kh"
+              }
+            ]
+          },
+          {
+            "id": "bot_2",
+            "name": "Елена 🤖",
+            "seatIndex": 3,
+            "chips": 860,
+            "cards": [
+              {
+                "rank": "T",
+                "suit": "s",
+                "code": "Ts"
+              },
+              {
+                "rank": "3",
+                "suit": "d",
+                "code": "3d"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hand_1789915612015_twyhw",
+        "timestamp": 1789915612015,
+        "tableId": "table_micro",
+        "tableName": "🥉 Стол Новичков",
+        "smallBlind": 10,
+        "bigBlind": 20,
+        "communityCards": [],
+        "myHoleCards": [
+          {
+            "rank": "5",
+            "suit": "s",
+            "code": "5s"
+          },
+          {
+            "rank": "A",
+            "suit": "d",
+            "code": "Ad"
+          }
+        ],
+        "result": "FOLD",
+        "netChips": 0,
+        "pot": 30,
+        "actionLog": [
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "BET",
+            "amount": 10,
+            "pot": 10
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 5,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "BET",
+            "amount": 20,
+            "pot": 30
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "FOLD",
+            "pot": 30
+          }
+        ],
+        "winners": [
+          {
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "amount": 30,
+            "handName": "Победа фолдом",
+            "handRank": 0,
+            "bestCards": [
+              {
+                "rank": "8",
+                "suit": "d",
+                "code": "8d"
+              },
+              {
+                "rank": "9",
+                "suit": "h",
+                "code": "9h"
+              }
+            ]
+          }
+        ],
+        "seats": [
+          {
+            "id": "6968710985",
+            "name": "Arman",
+            "seatIndex": 0,
+            "chips": 770,
+            "cards": [
+              {
+                "rank": "5",
+                "suit": "s",
+                "code": "5s"
+              },
+              {
+                "rank": "A",
+                "suit": "d",
+                "code": "Ad"
+              }
+            ]
+          },
+          {
+            "id": "bot_1789914908445_724",
+            "name": "Михаил 🤖",
+            "seatIndex": 4,
+            "chips": 800,
+            "cards": []
+          },
+          {
+            "id": "8046577374",
+            "name": "Dasyntac",
+            "seatIndex": 5,
+            "chips": 830,
+            "cards": [
+              {
+                "rank": "8",
+                "suit": "d",
+                "code": "8d"
+              },
+              {
+                "rank": "9",
+                "suit": "h",
+                "code": "9h"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hand_1789915603256_4e3mi",
+        "timestamp": 1789915603256,
+        "tableId": "table_micro",
+        "tableName": "🥉 Стол Новичков",
+        "smallBlind": 10,
+        "bigBlind": 20,
+        "communityCards": [],
+        "myHoleCards": [
+          {
+            "rank": "T",
+            "suit": "c",
+            "code": "Tc"
+          },
+          {
+            "rank": "8",
+            "suit": "d",
+            "code": "8d"
+          }
+        ],
+        "result": "FOLD",
+        "netChips": 0,
+        "pot": 40,
+        "actionLog": [
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 5,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "BET",
+            "amount": 10,
+            "pot": 10
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "BET",
+            "amount": 20,
+            "pot": 30
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 5,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "CALL",
+            "amount": 10,
+            "pot": 40
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "FOLD",
+            "pot": 40
+          }
+        ],
+        "winners": [
+          {
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "amount": 40,
+            "handName": "Победа фолдом",
+            "handRank": 0,
+            "bestCards": [
+              {
+                "rank": "7",
+                "suit": "h",
+                "code": "7h"
+              },
+              {
+                "rank": "Q",
+                "suit": "s",
+                "code": "Qs"
+              }
+            ]
+          }
+        ],
+        "seats": [
+          {
+            "id": "6968710985",
+            "name": "Arman",
+            "seatIndex": 0,
+            "chips": 780,
+            "cards": [
+              {
+                "rank": "T",
+                "suit": "c",
+                "code": "Tc"
+              },
+              {
+                "rank": "8",
+                "suit": "d",
+                "code": "8d"
+              }
+            ]
+          },
+          {
+            "id": "bot_1789914908445_724",
+            "name": "Михаил 🤖",
+            "seatIndex": 4,
+            "chips": 800,
+            "cards": []
+          },
+          {
+            "id": "8046577374",
+            "name": "Dasyntac",
+            "seatIndex": 5,
+            "chips": 820,
+            "cards": [
+              {
+                "rank": "7",
+                "suit": "h",
+                "code": "7h"
+              },
+              {
+                "rank": "Q",
+                "suit": "s",
+                "code": "Qs"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hand_1789915112580_5hw6w",
+        "timestamp": 1789915112580,
+        "tableId": "table_mid",
+        "tableName": "🥈 Серебряный Стол",
+        "smallBlind": 50,
+        "bigBlind": 100,
+        "communityCards": [
+          {
+            "rank": "5",
+            "suit": "s",
+            "code": "5s"
+          },
+          {
+            "rank": "7",
+            "suit": "s",
+            "code": "7s"
+          },
+          {
+            "rank": "5",
+            "suit": "c",
+            "code": "5c"
+          },
+          {
+            "rank": "2",
+            "suit": "s",
+            "code": "2s"
+          },
+          {
+            "rank": "T",
+            "suit": "h",
+            "code": "Th"
+          }
+        ],
+        "myHoleCards": [
+          {
+            "rank": "3",
+            "suit": "h",
+            "code": "3h"
+          },
+          {
+            "rank": "K",
+            "suit": "h",
+            "code": "Kh"
+          }
+        ],
+        "result": "LOSS",
+        "netChips": 0,
+        "pot": 20000,
+        "actionLog": [
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 5,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "BET",
+            "amount": 50,
+            "pot": 50
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "BET",
+            "amount": 100,
+            "pot": 150
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 5,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "RAISE",
+            "amount": 200,
+            "pot": 300
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "ALL_IN",
+            "amount": 10000,
+            "pot": 10200
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 5,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "CALL",
+            "amount": 9800,
+            "pot": 20000
+          }
+        ],
+        "winners": [
+          {
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "amount": 20000,
+            "handName": "Three of a Kind, 5's",
+            "handRank": 4,
+            "bestCards": [
+              {
+                "rank": "5",
+                "suit": "h",
+                "code": "5h"
+              },
+              {
+                "rank": "5",
+                "suit": "s",
+                "code": "5s"
+              },
+              {
+                "rank": "5",
+                "suit": "c",
+                "code": "5c"
+              },
+              {
+                "rank": "Q",
+                "suit": "c",
+                "code": "Qc"
+              },
+              {
+                "rank": "T",
+                "suit": "h",
+                "code": "Th"
+              }
+            ]
+          }
+        ],
+        "seats": [
+          {
+            "id": "6968710985",
+            "name": "Arman",
+            "seatIndex": 0,
+            "chips": 0,
+            "cards": [
+              {
+                "rank": "3",
+                "suit": "h",
+                "code": "3h"
+              },
+              {
+                "rank": "K",
+                "suit": "h",
+                "code": "Kh"
+              }
+            ]
+          },
+          {
+            "id": "8046577374",
+            "name": "Dasyntac",
+            "seatIndex": 5,
+            "chips": 20000,
+            "cards": [
+              {
+                "rank": "Q",
+                "suit": "c",
+                "code": "Qc"
+              },
+              {
+                "rank": "5",
+                "suit": "h",
+                "code": "5h"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hand_1789915028006_718r2",
+        "timestamp": 1789915028006,
+        "tableId": "table_micro",
+        "tableName": "🥉 Стол Новичков",
+        "smallBlind": 10,
+        "bigBlind": 20,
+        "communityCards": [
+          {
+            "rank": "T",
+            "suit": "c",
+            "code": "Tc"
+          },
+          {
+            "rank": "9",
+            "suit": "h",
+            "code": "9h"
+          },
+          {
+            "rank": "J",
+            "suit": "d",
+            "code": "Jd"
+          },
+          {
+            "rank": "6",
+            "suit": "s",
+            "code": "6s"
+          },
+          {
+            "rank": "J",
+            "suit": "c",
+            "code": "Jc"
+          }
+        ],
+        "myHoleCards": [
+          {
+            "rank": "9",
+            "suit": "s",
+            "code": "9s"
+          },
+          {
+            "rank": "7",
+            "suit": "h",
+            "code": "7h"
+          }
+        ],
+        "result": "WIN",
+        "netChips": 3160,
+        "pot": 3160,
+        "actionLog": [
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "BET",
+            "amount": 10,
+            "pot": 10
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "BET",
+            "amount": 20,
+            "pot": 30
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "ALL_IN",
+            "amount": 1580,
+            "pot": 1600
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "CALL",
+            "amount": 1560,
+            "pot": 3160
+          }
+        ],
+        "winners": [
+          {
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "amount": 3160,
+            "handName": "Two Pair, J's & 9's",
+            "handRank": 3,
+            "bestCards": [
+              {
+                "rank": "J",
+                "suit": "d",
+                "code": "Jd"
+              },
+              {
+                "rank": "J",
+                "suit": "c",
+                "code": "Jc"
+              },
+              {
+                "rank": "9",
+                "suit": "s",
+                "code": "9s"
+              },
+              {
+                "rank": "9",
+                "suit": "h",
+                "code": "9h"
+              },
+              {
+                "rank": "T",
+                "suit": "c",
+                "code": "Tc"
+              }
+            ]
+          }
+        ],
+        "seats": [
+          {
+            "id": "6968710985",
+            "name": "Arman",
+            "seatIndex": 0,
+            "chips": 3180,
+            "cards": [
+              {
+                "rank": "9",
+                "suit": "s",
+                "code": "9s"
+              },
+              {
+                "rank": "7",
+                "suit": "h",
+                "code": "7h"
+              }
+            ]
+          },
+          {
+            "id": "8046577374",
+            "name": "Dasyntac",
+            "seatIndex": 1,
+            "chips": 0,
+            "cards": [
+              {
+                "rank": "8",
+                "suit": "s",
+                "code": "8s"
+              },
+              {
+                "rank": "3",
+                "suit": "d",
+                "code": "3d"
+              }
+            ]
+          },
+          {
+            "id": "bot_1789914908445_724",
+            "name": "Михаил 🤖",
+            "seatIndex": 4,
+            "chips": 800,
+            "cards": []
+          }
+        ]
+      },
+      {
+        "id": "hand_1789915016574_qaa5j",
+        "timestamp": 1789915016574,
+        "tableId": "table_micro",
+        "tableName": "🥉 Стол Новичков",
+        "smallBlind": 10,
+        "bigBlind": 20,
+        "communityCards": [],
+        "myHoleCards": [
+          {
+            "rank": "6",
+            "suit": "s",
+            "code": "6s"
+          },
+          {
+            "rank": "2",
+            "suit": "s",
+            "code": "2s"
+          }
+        ],
+        "result": "FOLD",
+        "netChips": 0,
+        "pot": 30,
+        "actionLog": [
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "BET",
+            "amount": 10,
+            "pot": 10
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "BET",
+            "amount": 20,
+            "pot": 30
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "FOLD",
+            "pot": 30
+          }
+        ],
+        "winners": [
+          {
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "amount": 30,
+            "handName": "Победа фолдом",
+            "handRank": 0,
+            "bestCards": [
+              {
+                "rank": "4",
+                "suit": "d",
+                "code": "4d"
+              },
+              {
+                "rank": "4",
+                "suit": "h",
+                "code": "4h"
+              }
+            ]
+          }
+        ],
+        "seats": [
+          {
+            "id": "6968710985",
+            "name": "Arman",
+            "seatIndex": 0,
+            "chips": 1600,
+            "cards": [
+              {
+                "rank": "6",
+                "suit": "s",
+                "code": "6s"
+              },
+              {
+                "rank": "2",
+                "suit": "s",
+                "code": "2s"
+              }
+            ]
+          },
+          {
+            "id": "8046577374",
+            "name": "Dasyntac",
+            "seatIndex": 1,
+            "chips": 1580,
+            "cards": [
+              {
+                "rank": "4",
+                "suit": "d",
+                "code": "4d"
+              },
+              {
+                "rank": "4",
+                "suit": "h",
+                "code": "4h"
+              }
+            ]
+          },
+          {
+            "id": "bot_1789914908445_724",
+            "name": "Михаил 🤖",
+            "seatIndex": 4,
+            "chips": 800,
+            "cards": []
+          }
+        ]
+      },
+      {
+        "id": "hand_1789915009736_vzbvg",
+        "timestamp": 1789915009736,
+        "tableId": "table_micro",
+        "tableName": "🥉 Стол Новичков",
+        "smallBlind": 10,
+        "bigBlind": 20,
+        "communityCards": [],
+        "myHoleCards": [
+          {
+            "rank": "8",
+            "suit": "h",
+            "code": "8h"
+          },
+          {
+            "rank": "A",
+            "suit": "h",
+            "code": "Ah"
+          }
+        ],
+        "result": "WIN",
+        "netChips": 30,
+        "pot": 30,
+        "actionLog": [
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "BET",
+            "amount": 10,
+            "pot": 10
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "BET",
+            "amount": 20,
+            "pot": 30
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "FOLD",
+            "pot": 30
+          }
+        ],
+        "winners": [
+          {
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "amount": 30,
+            "handName": "Победа фолдом",
+            "handRank": 0,
+            "bestCards": [
+              {
+                "rank": "8",
+                "suit": "h",
+                "code": "8h"
+              },
+              {
+                "rank": "A",
+                "suit": "h",
+                "code": "Ah"
+              }
+            ]
+          }
+        ],
+        "seats": [
+          {
+            "id": "6968710985",
+            "name": "Arman",
+            "seatIndex": 0,
+            "chips": 1610,
+            "cards": [
+              {
+                "rank": "8",
+                "suit": "h",
+                "code": "8h"
+              },
+              {
+                "rank": "A",
+                "suit": "h",
+                "code": "Ah"
+              }
+            ]
+          },
+          {
+            "id": "8046577374",
+            "name": "Dasyntac",
+            "seatIndex": 1,
+            "chips": 1570,
+            "cards": [
+              {
+                "rank": "8",
+                "suit": "d",
+                "code": "8d"
+              },
+              {
+                "rank": "4",
+                "suit": "h",
+                "code": "4h"
+              }
+            ]
+          },
+          {
+            "id": "bot_1789914908445_724",
+            "name": "Михаил 🤖",
+            "seatIndex": 4,
+            "chips": 800,
+            "cards": []
+          }
+        ]
+      },
+      {
+        "id": "hand_1789914988670_a7jd7",
+        "timestamp": 1789914988670,
+        "tableId": "table_micro",
+        "tableName": "🥉 Стол Новичков",
+        "smallBlind": 10,
+        "bigBlind": 20,
+        "communityCards": [
+          {
+            "rank": "6",
+            "suit": "s",
+            "code": "6s"
+          },
+          {
+            "rank": "K",
+            "suit": "s",
+            "code": "Ks"
+          },
+          {
+            "rank": "T",
+            "suit": "s",
+            "code": "Ts"
+          },
+          {
+            "rank": "7",
+            "suit": "d",
+            "code": "7d"
+          },
+          {
+            "rank": "K",
+            "suit": "d",
+            "code": "Kd"
+          }
+        ],
+        "myHoleCards": [
+          {
+            "rank": "3",
+            "suit": "s",
+            "code": "3s"
+          },
+          {
+            "rank": "2",
+            "suit": "h",
+            "code": "2h"
+          }
+        ],
+        "result": "WIN",
+        "netChips": 1600,
+        "pot": 3180,
+        "actionLog": [
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "BET",
+            "amount": 10,
+            "pot": 10
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "BET",
+            "amount": 20,
+            "pot": 30
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "ALL_IN",
+            "amount": 1600,
+            "pot": 1620
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "CALL",
+            "amount": 1560,
+            "pot": 3180
+          }
+        ],
+        "winners": [
+          {
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "amount": 1600,
+            "handName": "Pair, K's",
+            "handRank": 2,
+            "bestCards": [
+              {
+                "rank": "K",
+                "suit": "s",
+                "code": "Ks"
+              },
+              {
+                "rank": "K",
+                "suit": "d",
+                "code": "Kd"
+              },
+              {
+                "rank": "T",
+                "suit": "s",
+                "code": "Ts"
+              },
+              {
+                "rank": "7",
+                "suit": "d",
+                "code": "7d"
+              },
+              {
+                "rank": "6",
+                "suit": "s",
+                "code": "6s"
+              }
+            ]
+          },
+          {
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "amount": 1580,
+            "handName": "Pair, K's",
+            "handRank": 2,
+            "bestCards": [
+              {
+                "rank": "K",
+                "suit": "s",
+                "code": "Ks"
+              },
+              {
+                "rank": "K",
+                "suit": "d",
+                "code": "Kd"
+              },
+              {
+                "rank": "T",
+                "suit": "s",
+                "code": "Ts"
+              },
+              {
+                "rank": "7",
+                "suit": "d",
+                "code": "7d"
+              },
+              {
+                "rank": "6",
+                "suit": "s",
+                "code": "6s"
+              }
+            ]
+          }
+        ],
+        "seats": [
+          {
+            "id": "6968710985",
+            "name": "Arman",
+            "seatIndex": 0,
+            "chips": 1600,
+            "cards": [
+              {
+                "rank": "3",
+                "suit": "s",
+                "code": "3s"
+              },
+              {
+                "rank": "2",
+                "suit": "h",
+                "code": "2h"
+              }
+            ]
+          },
+          {
+            "id": "8046577374",
+            "name": "Dasyntac",
+            "seatIndex": 1,
+            "chips": 1580,
+            "cards": [
+              {
+                "rank": "4",
+                "suit": "h",
+                "code": "4h"
+              },
+              {
+                "rank": "3",
+                "suit": "c",
+                "code": "3c"
+              }
+            ]
+          },
+          {
+            "id": "bot_1789914908445_724",
+            "name": "Михаил 🤖",
+            "seatIndex": 4,
+            "chips": 800,
+            "cards": []
+          }
+        ]
+      },
+      {
+        "id": "hand_1789914976165_ekdui",
+        "timestamp": 1789914976165,
+        "tableId": "table_micro",
+        "tableName": "🥉 Стол Новичков",
+        "smallBlind": 10,
+        "bigBlind": 20,
+        "communityCards": [
+          {
+            "rank": "T",
+            "suit": "h",
+            "code": "Th"
+          },
+          {
+            "rank": "K",
+            "suit": "d",
+            "code": "Kd"
+          },
+          {
+            "rank": "5",
+            "suit": "d",
+            "code": "5d"
+          },
+          {
+            "rank": "K",
+            "suit": "c",
+            "code": "Kc"
+          },
+          {
+            "rank": "3",
+            "suit": "c",
+            "code": "3c"
+          }
+        ],
+        "myHoleCards": [
+          {
+            "rank": "9",
+            "suit": "s",
+            "code": "9s"
+          },
+          {
+            "rank": "T",
+            "suit": "d",
+            "code": "Td"
+          }
+        ],
+        "result": "WIN",
+        "netChips": 1600,
+        "pot": 3180,
+        "actionLog": [
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "BET",
+            "amount": 10,
+            "pot": 10
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "BET",
+            "amount": 20,
+            "pot": 30
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "ALL_IN",
+            "amount": 2380,
+            "pot": 2400
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "CALL",
+            "amount": 780,
+            "pot": 3180
+          }
+        ],
+        "winners": [
+          {
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "amount": 1600,
+            "handName": "Two Pair, K's & 10's",
+            "handRank": 3,
+            "bestCards": [
+              {
+                "rank": "K",
+                "suit": "d",
+                "code": "Kd"
+              },
+              {
+                "rank": "K",
+                "suit": "c",
+                "code": "Kc"
+              },
+              {
+                "rank": "T",
+                "suit": "d",
+                "code": "Td"
+              },
+              {
+                "rank": "T",
+                "suit": "h",
+                "code": "Th"
+              },
+              {
+                "rank": "9",
+                "suit": "s",
+                "code": "9s"
+              }
+            ]
+          },
+          {
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "amount": 1580,
+            "handName": "Last Player Standing",
+            "handRank": 0,
+            "bestCards": [
+              {
+                "rank": "J",
+                "suit": "d",
+                "code": "Jd"
+              },
+              {
+                "rank": "2",
+                "suit": "c",
+                "code": "2c"
+              }
+            ]
+          }
+        ],
+        "seats": [
+          {
+            "id": "6968710985",
+            "name": "Arman",
+            "seatIndex": 0,
+            "chips": 1600,
+            "cards": [
+              {
+                "rank": "9",
+                "suit": "s",
+                "code": "9s"
+              },
+              {
+                "rank": "T",
+                "suit": "d",
+                "code": "Td"
+              }
+            ]
+          },
+          {
+            "id": "8046577374",
+            "name": "Dasyntac",
+            "seatIndex": 1,
+            "chips": 1580,
+            "cards": [
+              {
+                "rank": "J",
+                "suit": "d",
+                "code": "Jd"
+              },
+              {
+                "rank": "2",
+                "suit": "c",
+                "code": "2c"
+              }
+            ]
+          },
+          {
+            "id": "bot_1789914908445_724",
+            "name": "Михаил 🤖",
+            "seatIndex": 4,
+            "chips": 800,
+            "cards": []
+          }
+        ]
+      },
+      {
+        "id": "hand_1789914965705_46rml",
+        "timestamp": 1789914965705,
+        "tableId": "table_micro",
+        "tableName": "🥉 Стол Новичков",
+        "smallBlind": 10,
+        "bigBlind": 20,
+        "communityCards": [
+          {
+            "rank": "T",
+            "suit": "c",
+            "code": "Tc"
+          },
+          {
+            "rank": "A",
+            "suit": "d",
+            "code": "Ad"
+          },
+          {
+            "rank": "Q",
+            "suit": "s",
+            "code": "Qs"
+          },
+          {
+            "rank": "3",
+            "suit": "s",
+            "code": "3s"
+          },
+          {
+            "rank": "8",
+            "suit": "d",
+            "code": "8d"
+          }
+        ],
+        "myHoleCards": [
+          {
+            "rank": "6",
+            "suit": "c",
+            "code": "6c"
+          },
+          {
+            "rank": "A",
+            "suit": "h",
+            "code": "Ah"
+          }
+        ],
+        "result": "WIN",
+        "netChips": 800,
+        "pot": 3180,
+        "actionLog": [
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "BET",
+            "amount": 10,
+            "pot": 10
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "BET",
+            "amount": 20,
+            "pot": 30
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "ALL_IN",
+            "amount": 400,
+            "pot": 420
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "ALL_IN",
+            "amount": 2780,
+            "pot": 3180
+          }
+        ],
+        "winners": [
+          {
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "amount": 800,
+            "handName": "Pair, A's",
+            "handRank": 2,
+            "bestCards": [
+              {
+                "rank": "A",
+                "suit": "h",
+                "code": "Ah"
+              },
+              {
+                "rank": "A",
+                "suit": "d",
+                "code": "Ad"
+              },
+              {
+                "rank": "Q",
+                "suit": "s",
+                "code": "Qs"
+              },
+              {
+                "rank": "T",
+                "suit": "c",
+                "code": "Tc"
+              },
+              {
+                "rank": "8",
+                "suit": "d",
+                "code": "8d"
+              }
+            ]
+          },
+          {
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "amount": 2380,
+            "handName": "Last Player Standing",
+            "handRank": 0,
+            "bestCards": [
+              {
+                "rank": "2",
+                "suit": "d",
+                "code": "2d"
+              },
+              {
+                "rank": "6",
+                "suit": "h",
+                "code": "6h"
+              }
+            ]
+          }
+        ],
+        "seats": [
+          {
+            "id": "6968710985",
+            "name": "Arman",
+            "seatIndex": 0,
+            "chips": 800,
+            "cards": [
+              {
+                "rank": "6",
+                "suit": "c",
+                "code": "6c"
+              },
+              {
+                "rank": "A",
+                "suit": "h",
+                "code": "Ah"
+              }
+            ]
+          },
+          {
+            "id": "8046577374",
+            "name": "Dasyntac",
+            "seatIndex": 1,
+            "chips": 2380,
+            "cards": [
+              {
+                "rank": "2",
+                "suit": "d",
+                "code": "2d"
+              },
+              {
+                "rank": "6",
+                "suit": "h",
+                "code": "6h"
+              }
+            ]
+          },
+          {
+            "id": "bot_1789914908445_724",
+            "name": "Михаил 🤖",
+            "seatIndex": 4,
+            "chips": 800,
+            "cards": []
+          }
+        ]
+      },
+      {
+        "id": "hand_1789914955557_tr5ig",
+        "timestamp": 1789914955557,
+        "tableId": "table_micro",
+        "tableName": "🥉 Стол Новичков",
+        "smallBlind": 10,
+        "bigBlind": 20,
+        "communityCards": [
+          {
+            "rank": "Q",
+            "suit": "c",
+            "code": "Qc"
+          },
+          {
+            "rank": "7",
+            "suit": "d",
+            "code": "7d"
+          },
+          {
+            "rank": "J",
+            "suit": "c",
+            "code": "Jc"
+          },
+          {
+            "rank": "6",
+            "suit": "h",
+            "code": "6h"
+          },
+          {
+            "rank": "3",
+            "suit": "s",
+            "code": "3s"
+          }
+        ],
+        "myHoleCards": [
+          {
+            "rank": "8",
+            "suit": "c",
+            "code": "8c"
+          },
+          {
+            "rank": "J",
+            "suit": "s",
+            "code": "Js"
+          }
+        ],
+        "result": "WIN",
+        "netChips": 400,
+        "pot": 3180,
+        "actionLog": [
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "BET",
+            "amount": 10,
+            "pot": 10
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "BET",
+            "amount": 20,
+            "pot": 30
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "ALL_IN",
+            "amount": 2980,
+            "pot": 3000
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "CALL",
+            "amount": 180,
+            "pot": 3180
+          }
+        ],
+        "winners": [
+          {
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "amount": 400,
+            "handName": "Pair, J's",
+            "handRank": 2,
+            "bestCards": [
+              {
+                "rank": "J",
+                "suit": "s",
+                "code": "Js"
+              },
+              {
+                "rank": "J",
+                "suit": "c",
+                "code": "Jc"
+              },
+              {
+                "rank": "Q",
+                "suit": "c",
+                "code": "Qc"
+              },
+              {
+                "rank": "8",
+                "suit": "c",
+                "code": "8c"
+              },
+              {
+                "rank": "7",
+                "suit": "d",
+                "code": "7d"
+              }
+            ]
+          },
+          {
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "amount": 2780,
+            "handName": "Last Player Standing",
+            "handRank": 0,
+            "bestCards": [
+              {
+                "rank": "A",
+                "suit": "s",
+                "code": "As"
+              },
+              {
+                "rank": "2",
+                "suit": "c",
+                "code": "2c"
+              }
+            ]
+          }
+        ],
+        "seats": [
+          {
+            "id": "6968710985",
+            "name": "Arman",
+            "seatIndex": 0,
+            "chips": 400,
+            "cards": [
+              {
+                "rank": "8",
+                "suit": "c",
+                "code": "8c"
+              },
+              {
+                "rank": "J",
+                "suit": "s",
+                "code": "Js"
+              }
+            ]
+          },
+          {
+            "id": "8046577374",
+            "name": "Dasyntac",
+            "seatIndex": 1,
+            "chips": 2780,
+            "cards": [
+              {
+                "rank": "A",
+                "suit": "s",
+                "code": "As"
+              },
+              {
+                "rank": "2",
+                "suit": "c",
+                "code": "2c"
+              }
+            ]
+          },
+          {
+            "id": "bot_1789914908445_724",
+            "name": "Михаил 🤖",
+            "seatIndex": 4,
+            "chips": 800,
+            "cards": []
+          }
+        ]
+      },
+      {
+        "id": "hand_1789914944042_31465",
+        "timestamp": 1789914944042,
+        "tableId": "table_micro",
+        "tableName": "🥉 Стол Новичков",
+        "smallBlind": 10,
+        "bigBlind": 20,
+        "communityCards": [
+          {
+            "rank": "8",
+            "suit": "c",
+            "code": "8c"
+          },
+          {
+            "rank": "9",
+            "suit": "c",
+            "code": "9c"
+          },
+          {
+            "rank": "A",
+            "suit": "s",
+            "code": "As"
+          },
+          {
+            "rank": "Q",
+            "suit": "c",
+            "code": "Qc"
+          },
+          {
+            "rank": "K",
+            "suit": "d",
+            "code": "Kd"
+          }
+        ],
+        "myHoleCards": [
+          {
+            "rank": "T",
+            "suit": "d",
+            "code": "Td"
+          },
+          {
+            "rank": "T",
+            "suit": "h",
+            "code": "Th"
+          }
+        ],
+        "result": "WIN",
+        "netChips": 200,
+        "pot": 280,
+        "actionLog": [
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "BET",
+            "amount": 10,
+            "pot": 10
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "BET",
+            "amount": 20,
+            "pot": 30
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "ALL_IN",
+            "amount": 100,
+            "pot": 120
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "RAISE",
+            "amount": 180,
+            "pot": 280
+          }
+        ],
+        "winners": [
+          {
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "amount": 200,
+            "handName": "Pair, 10's",
+            "handRank": 2,
+            "bestCards": [
+              {
+                "rank": "T",
+                "suit": "d",
+                "code": "Td"
+              },
+              {
+                "rank": "T",
+                "suit": "h",
+                "code": "Th"
+              },
+              {
+                "rank": "A",
+                "suit": "s",
+                "code": "As"
+              },
+              {
+                "rank": "K",
+                "suit": "d",
+                "code": "Kd"
+              },
+              {
+                "rank": "Q",
+                "suit": "c",
+                "code": "Qc"
+              }
+            ]
+          },
+          {
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "amount": 80,
+            "handName": "Last Player Standing",
+            "handRank": 0,
+            "bestCards": [
+              {
+                "rank": "8",
+                "suit": "d",
+                "code": "8d"
+              },
+              {
+                "rank": "4",
+                "suit": "h",
+                "code": "4h"
+              }
+            ]
+          }
+        ],
+        "seats": [
+          {
+            "id": "6968710985",
+            "name": "Arman",
+            "seatIndex": 0,
+            "chips": 200,
+            "cards": [
+              {
+                "rank": "T",
+                "suit": "d",
+                "code": "Td"
+              },
+              {
+                "rank": "T",
+                "suit": "h",
+                "code": "Th"
+              }
+            ]
+          },
+          {
+            "id": "8046577374",
+            "name": "Dasyntac",
+            "seatIndex": 1,
+            "chips": 2980,
+            "cards": [
+              {
+                "rank": "8",
+                "suit": "d",
+                "code": "8d"
+              },
+              {
+                "rank": "4",
+                "suit": "h",
+                "code": "4h"
+              }
+            ]
+          },
+          {
+            "id": "bot_1789914908445_724",
+            "name": "Михаил 🤖",
+            "seatIndex": 4,
+            "chips": 800,
+            "cards": []
+          }
+        ]
+      },
+      {
+        "id": "hand_1789914932875_6jnax",
+        "timestamp": 1789914932875,
+        "tableId": "table_micro",
+        "tableName": "🥉 Стол Новичков",
+        "smallBlind": 10,
+        "bigBlind": 20,
+        "communityCards": [
+          {
+            "rank": "6",
+            "suit": "s",
+            "code": "6s"
+          },
+          {
+            "rank": "5",
+            "suit": "d",
+            "code": "5d"
+          },
+          {
+            "rank": "4",
+            "suit": "d",
+            "code": "4d"
+          },
+          {
+            "rank": "J",
+            "suit": "d",
+            "code": "Jd"
+          },
+          {
+            "rank": "2",
+            "suit": "h",
+            "code": "2h"
+          }
+        ],
+        "myHoleCards": [
+          {
+            "rank": "Q",
+            "suit": "s",
+            "code": "Qs"
+          },
+          {
+            "rank": "8",
+            "suit": "c",
+            "code": "8c"
+          }
+        ],
+        "result": "LOSS",
+        "netChips": 0,
+        "pot": 3080,
+        "actionLog": [
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "BET",
+            "amount": 10,
+            "pot": 10
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "BET",
+            "amount": 20,
+            "pot": 30
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "ALL_IN",
+            "amount": 1540,
+            "pot": 1560
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "CALL",
+            "amount": 1520,
+            "pot": 3080
+          }
+        ],
+        "winners": [
+          {
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "amount": 3080,
+            "handName": "A High",
+            "handRank": 1,
+            "bestCards": [
+              {
+                "rank": "A",
+                "suit": "d",
+                "code": "Ad"
+              },
+              {
+                "rank": "J",
+                "suit": "d",
+                "code": "Jd"
+              },
+              {
+                "rank": "T",
+                "suit": "c",
+                "code": "Tc"
+              },
+              {
+                "rank": "6",
+                "suit": "s",
+                "code": "6s"
+              },
+              {
+                "rank": "5",
+                "suit": "d",
+                "code": "5d"
+              }
+            ]
+          }
+        ],
+        "seats": [
+          {
+            "id": "6968710985",
+            "name": "Arman",
+            "seatIndex": 0,
+            "chips": 100,
+            "cards": [
+              {
+                "rank": "Q",
+                "suit": "s",
+                "code": "Qs"
+              },
+              {
+                "rank": "8",
+                "suit": "c",
+                "code": "8c"
+              }
+            ]
+          },
+          {
+            "id": "8046577374",
+            "name": "Dasyntac",
+            "seatIndex": 1,
+            "chips": 3080,
+            "cards": [
+              {
+                "rank": "A",
+                "suit": "d",
+                "code": "Ad"
+              },
+              {
+                "rank": "T",
+                "suit": "c",
+                "code": "Tc"
+              }
+            ]
+          },
+          {
+            "id": "bot_1789914908445_724",
+            "name": "Михаил 🤖",
+            "seatIndex": 4,
+            "chips": 800,
+            "cards": []
+          }
+        ]
+      },
+      {
+        "id": "hand_1789914921887_d5vqd",
+        "timestamp": 1789914921887,
+        "tableId": "table_micro",
+        "tableName": "🥉 Стол Новичков",
+        "smallBlind": 10,
+        "bigBlind": 20,
+        "communityCards": [
+          {
+            "rank": "A",
+            "suit": "s",
+            "code": "As"
+          },
+          {
+            "rank": "J",
+            "suit": "c",
+            "code": "Jc"
+          },
+          {
+            "rank": "T",
+            "suit": "c",
+            "code": "Tc"
+          },
+          {
+            "rank": "8",
+            "suit": "h",
+            "code": "8h"
+          },
+          {
+            "rank": "6",
+            "suit": "h",
+            "code": "6h"
+          }
+        ],
+        "myHoleCards": [
+          {
+            "rank": "9",
+            "suit": "s",
+            "code": "9s"
+          },
+          {
+            "rank": "K",
+            "suit": "h",
+            "code": "Kh"
+          }
+        ],
+        "result": "WIN",
+        "netChips": 1640,
+        "pot": 1640,
+        "actionLog": [
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "BET",
+            "amount": 10,
+            "pot": 10
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "BET",
+            "amount": 20,
+            "pot": 30
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "ALL_IN",
+            "amount": 820,
+            "pot": 840
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "CALL",
+            "amount": 800,
+            "pot": 1640
+          }
+        ],
+        "winners": [
+          {
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "amount": 1640,
+            "handName": "A High",
+            "handRank": 1,
+            "bestCards": [
+              {
+                "rank": "A",
+                "suit": "s",
+                "code": "As"
+              },
+              {
+                "rank": "K",
+                "suit": "h",
+                "code": "Kh"
+              },
+              {
+                "rank": "J",
+                "suit": "c",
+                "code": "Jc"
+              },
+              {
+                "rank": "T",
+                "suit": "c",
+                "code": "Tc"
+              },
+              {
+                "rank": "9",
+                "suit": "s",
+                "code": "9s"
+              }
+            ]
+          }
+        ],
+        "seats": [
+          {
+            "id": "6968710985",
+            "name": "Arman",
+            "seatIndex": 0,
+            "chips": 1640,
+            "cards": [
+              {
+                "rank": "9",
+                "suit": "s",
+                "code": "9s"
+              },
+              {
+                "rank": "K",
+                "suit": "h",
+                "code": "Kh"
+              }
+            ]
+          },
+          {
+            "id": "8046577374",
+            "name": "Dasyntac",
+            "seatIndex": 1,
+            "chips": 1540,
+            "cards": [
+              {
+                "rank": "2",
+                "suit": "d",
+                "code": "2d"
+              },
+              {
+                "rank": "Q",
+                "suit": "c",
+                "code": "Qc"
+              }
+            ]
+          },
+          {
+            "id": "bot_1789914908445_724",
+            "name": "Михаил 🤖",
+            "seatIndex": 4,
+            "chips": 800,
+            "cards": []
+          }
+        ]
+      },
+      {
+        "id": "hand_1789914908941_iqmcs",
+        "timestamp": 1789914908941,
+        "tableId": "table_micro",
+        "tableName": "🥉 Стол Новичков",
+        "smallBlind": 10,
+        "bigBlind": 20,
+        "communityCards": [
+          {
+            "rank": "A",
+            "suit": "h",
+            "code": "Ah"
+          },
+          {
+            "rank": "K",
+            "suit": "c",
+            "code": "Kc"
+          },
+          {
+            "rank": "T",
+            "suit": "c",
+            "code": "Tc"
+          },
+          {
+            "rank": "T",
+            "suit": "s",
+            "code": "Ts"
+          },
+          {
+            "rank": "9",
+            "suit": "h",
+            "code": "9h"
+          }
+        ],
+        "myHoleCards": [
+          {
+            "rank": "4",
+            "suit": "d",
+            "code": "4d"
+          },
+          {
+            "rank": "J",
+            "suit": "c",
+            "code": "Jc"
+          }
+        ],
+        "result": "WIN",
+        "netChips": 820,
+        "pot": 3180,
+        "actionLog": [
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "BET",
+            "amount": 10,
+            "pot": 10
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "BET",
+            "amount": 20,
+            "pot": 30
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "CALL",
+            "amount": 10,
+            "pot": 40
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "ALL_IN",
+            "amount": 2000,
+            "pot": 2020
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "CALL",
+            "amount": 1160,
+            "pot": 3180
+          }
+        ],
+        "winners": [
+          {
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "amount": 2360,
+            "handName": "Two Pair, 10's & 9's",
+            "handRank": 3,
+            "bestCards": [
+              {
+                "rank": "T",
+                "suit": "c",
+                "code": "Tc"
+              },
+              {
+                "rank": "T",
+                "suit": "s",
+                "code": "Ts"
+              },
+              {
+                "rank": "9",
+                "suit": "d",
+                "code": "9d"
+              },
+              {
+                "rank": "9",
+                "suit": "h",
+                "code": "9h"
+              },
+              {
+                "rank": "A",
+                "suit": "h",
+                "code": "Ah"
+              }
+            ]
+          },
+          {
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "amount": 820,
+            "handName": "Last Player Standing",
+            "handRank": 0,
+            "bestCards": [
+              {
+                "rank": "4",
+                "suit": "d",
+                "code": "4d"
+              },
+              {
+                "rank": "J",
+                "suit": "c",
+                "code": "Jc"
+              }
+            ]
+          }
+        ],
+        "seats": [
+          {
+            "id": "6968710985",
+            "name": "Arman",
+            "seatIndex": 0,
+            "chips": 820,
+            "cards": [
+              {
+                "rank": "4",
+                "suit": "d",
+                "code": "4d"
+              },
+              {
+                "rank": "J",
+                "suit": "c",
+                "code": "Jc"
+              }
+            ]
+          },
+          {
+            "id": "8046577374",
+            "name": "Dasyntac",
+            "seatIndex": 1,
+            "chips": 2360,
+            "cards": [
+              {
+                "rank": "9",
+                "suit": "d",
+                "code": "9d"
+              },
+              {
+                "rank": "Q",
+                "suit": "d",
+                "code": "Qd"
+              }
+            ]
+          },
+          {
+            "id": "bot_1789914908445_724",
+            "name": "Михаил 🤖",
+            "seatIndex": 4,
+            "chips": 800,
+            "cards": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "8046577374",
+    "username": "dasyntac_am",
+    "firstName": "Dasyntac",
+    "chips": 7220,
+    "handsPlayed": 16,
+    "handsWon": 11,
+    "lastDailyBonus": 1789910269627,
+    "purchases": [],
+    "referralCount": 0,
+    "referralEarnings": 0,
+    "invitedFriends": [],
+    "referredBy": "6968710985",
+    "xp": 3320,
+    "level": 5,
+    "currentStreak": 0,
+    "bestStreak": 6,
+    "biggestWin": 20000,
+    "biggestPotWon": 20000,
+    "quests": {
+      "daily_hands_10": {
+        "progress": 10,
+        "completed": true,
+        "claimed": true
+      },
+      "weekly_hands_50": {
+        "progress": 16,
+        "completed": false,
+        "claimed": false
+      },
+      "daily_wins_3": {
+        "progress": 3,
+        "completed": true,
+        "claimed": true
+      },
+      "weekly_wins_15": {
+        "progress": 11,
+        "completed": false,
+        "claimed": false
+      }
+    },
+    "achievements": {
+      "first_win": {
+        "unlockedAt": 1789914908959,
+        "progress": 1
+      },
+      "streak_3": {
+        "unlockedAt": 1789914955567,
+        "progress": 3
+      },
+      "streak_5": {
+        "unlockedAt": 1789914976176,
+        "progress": 5
+      },
+      "hands_10": {
+        "unlockedAt": 1789915016588,
+        "progress": 10
+      },
+      "big_pot_10k": {
+        "unlockedAt": 1789915112594,
+        "progress": 1
+      },
+      "level_5": {
+        "unlockedAt": 1789915174628,
+        "progress": 5
+      },
+      "wins_10": {
+        "unlockedAt": 1789915603265,
+        "progress": 10
+      }
+    },
+    "seasonXp": 3320,
+    "seasonLevel": 1,
+    "claimedSeasonTiers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "inventory": [
+      "card_sapphire",
+      "frame_bronze",
+      "table_emerald",
+      "card_obsidian",
+      "frame_silver",
+      "card_emerald"
+    ],
+    "equipped": {
+      "cardBack": "card_obsidian",
+      "avatarFrame": "frame_silver",
+      "tableTheme": "table_emerald"
+    },
+    "handHistory": [
+      {
+        "id": "hand_1789915687978_y48gj",
+        "timestamp": 1789915687978,
+        "tableId": "table_tour_sng_silver",
+        "tableName": "🥈 Sit & Go Серебряный",
+        "smallBlind": 200,
+        "bigBlind": 400,
+        "communityCards": [],
+        "myHoleCards": [
+          {
+            "rank": "J",
+            "suit": "h",
+            "code": "Jh"
+          },
+          {
+            "rank": "7",
+            "suit": "c",
+            "code": "7c"
+          }
+        ],
+        "result": "FOLD",
+        "netChips": 0,
+        "pot": 600,
+        "actionLog": [
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 2,
+            "playerId": "bot_tour_1789915144504_0",
+            "playerName": "Алексей 🤖",
+            "action": "BET",
+            "amount": 200,
+            "pot": 200
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 4,
+            "playerId": "bot_tour_1789915144504_2",
+            "playerName": "Михаил 🤖",
+            "action": "BET",
+            "amount": 400,
+            "pot": 600
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 5,
+            "playerId": "bot_tour_1789915144504_3",
+            "playerName": "Анна 🤖",
+            "action": "FOLD",
+            "pot": 600
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "FOLD",
+            "pot": 600
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 2,
+            "playerId": "bot_tour_1789915144504_0",
+            "playerName": "Алексей 🤖",
+            "action": "FOLD",
+            "pot": 600
+          }
+        ],
+        "winners": [
+          {
+            "playerId": "bot_tour_1789915144504_2",
+            "playerName": "Михаил 🤖",
+            "amount": 600,
+            "handName": "Победа фолдом",
+            "handRank": 0,
+            "bestCards": [
+              {
+                "rank": "5",
+                "suit": "d",
+                "code": "5d"
+              },
+              {
+                "rank": "2",
+                "suit": "d",
+                "code": "2d"
+              }
+            ]
+          }
+        ],
+        "seats": [
+          {
+            "id": "8046577374",
+            "name": "Dasyntac",
+            "seatIndex": 0,
+            "chips": 2800,
+            "cards": [
+              {
+                "rank": "J",
+                "suit": "h",
+                "code": "Jh"
+              },
+              {
+                "rank": "7",
+                "suit": "c",
+                "code": "7c"
+              }
+            ]
+          },
+          {
+            "id": "bot_tour_1789915144504_0",
+            "name": "Алексей 🤖",
+            "seatIndex": 2,
+            "chips": 7880,
+            "cards": [
+              {
+                "rank": "5",
+                "suit": "h",
+                "code": "5h"
+              },
+              {
+                "rank": "A",
+                "suit": "d",
+                "code": "Ad"
+              }
+            ]
+          },
+          {
+            "id": "bot_tour_1789915144504_2",
+            "name": "Михаил 🤖",
+            "seatIndex": 4,
+            "chips": 3570,
+            "cards": [
+              {
+                "rank": "5",
+                "suit": "d",
+                "code": "5d"
+              },
+              {
+                "rank": "2",
+                "suit": "d",
+                "code": "2d"
+              }
+            ]
+          },
+          {
+            "id": "bot_tour_1789915144504_3",
+            "name": "Анна 🤖",
+            "seatIndex": 5,
+            "chips": 760,
+            "cards": [
+              {
+                "rank": "3",
+                "suit": "s",
+                "code": "3s"
+              },
+              {
+                "rank": "K",
+                "suit": "s",
+                "code": "Ks"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hand_1789915664704_o2we6",
+        "timestamp": 1789915664704,
+        "tableId": "table_tour_sng_silver",
+        "tableName": "🥈 Sit & Go Серебряный",
+        "smallBlind": 200,
+        "bigBlind": 400,
+        "communityCards": [
+          {
+            "rank": "3",
+            "suit": "h",
+            "code": "3h"
+          },
+          {
+            "rank": "2",
+            "suit": "h",
+            "code": "2h"
+          },
+          {
+            "rank": "6",
+            "suit": "h",
+            "code": "6h"
+          },
+          {
+            "rank": "J",
+            "suit": "d",
+            "code": "Jd"
+          },
+          {
+            "rank": "9",
+            "suit": "c",
+            "code": "9c"
+          }
+        ],
+        "myHoleCards": [
+          {
+            "rank": "7",
+            "suit": "h",
+            "code": "7h"
+          },
+          {
+            "rank": "J",
+            "suit": "c",
+            "code": "Jc"
+          }
+        ],
+        "result": "FOLD",
+        "netChips": 0,
+        "pot": 4200,
+        "actionLog": [
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "BET",
+            "amount": 200,
+            "pot": 200
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 2,
+            "playerId": "bot_tour_1789915144504_0",
+            "playerName": "Алексей 🤖",
+            "action": "BET",
+            "amount": 400,
+            "pot": 600
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 4,
+            "playerId": "bot_tour_1789915144504_2",
+            "playerName": "Михаил 🤖",
+            "action": "CALL",
+            "amount": 400,
+            "pot": 1000
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 5,
+            "playerId": "bot_tour_1789915144504_3",
+            "playerName": "Анна 🤖",
+            "action": "CALL",
+            "amount": 400,
+            "pot": 1400
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "FOLD",
+            "pot": 1400
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 2,
+            "playerId": "bot_tour_1789915144504_0",
+            "playerName": "Алексей 🤖",
+            "action": "CHECK",
+            "pot": 1400
+          },
+          {
+            "stage": "FLOP",
+            "seatIndex": 2,
+            "playerId": "bot_tour_1789915144504_0",
+            "playerName": "Алексей 🤖",
+            "action": "BET",
+            "amount": 400,
+            "pot": 1800
+          },
+          {
+            "stage": "FLOP",
+            "seatIndex": 4,
+            "playerId": "bot_tour_1789915144504_2",
+            "playerName": "Михаил 🤖",
+            "action": "CALL",
+            "amount": 400,
+            "pot": 2200
+          },
+          {
+            "stage": "FLOP",
+            "seatIndex": 5,
+            "playerId": "bot_tour_1789915144504_3",
+            "playerName": "Анна 🤖",
+            "action": "CALL",
+            "amount": 400,
+            "pot": 2600
+          },
+          {
+            "stage": "TURN",
+            "seatIndex": 2,
+            "playerId": "bot_tour_1789915144504_0",
+            "playerName": "Алексей 🤖",
+            "action": "CHECK",
+            "pot": 2600
+          },
+          {
+            "stage": "TURN",
+            "seatIndex": 4,
+            "playerId": "bot_tour_1789915144504_2",
+            "playerName": "Михаил 🤖",
+            "action": "BET",
+            "amount": 400,
+            "pot": 3000
+          },
+          {
+            "stage": "TURN",
+            "seatIndex": 5,
+            "playerId": "bot_tour_1789915144504_3",
+            "playerName": "Анна 🤖",
+            "action": "FOLD",
+            "pot": 3000
+          },
+          {
+            "stage": "TURN",
+            "seatIndex": 2,
+            "playerId": "bot_tour_1789915144504_0",
+            "playerName": "Алексей 🤖",
+            "action": "RAISE",
+            "amount": 800,
+            "pot": 3800
+          },
+          {
+            "stage": "TURN",
+            "seatIndex": 4,
+            "playerId": "bot_tour_1789915144504_2",
+            "playerName": "Михаил 🤖",
+            "action": "CALL",
+            "amount": 400,
+            "pot": 4200
+          },
+          {
+            "stage": "RIVER",
+            "seatIndex": 2,
+            "playerId": "bot_tour_1789915144504_0",
+            "playerName": "Алексей 🤖",
+            "action": "CHECK",
+            "pot": 4200
+          },
+          {
+            "stage": "RIVER",
+            "seatIndex": 4,
+            "playerId": "bot_tour_1789915144504_2",
+            "playerName": "Михаил 🤖",
+            "action": "CHECK",
+            "pot": 4200
+          }
+        ],
+        "winners": [
+          {
+            "playerId": "bot_tour_1789915144504_0",
+            "playerName": "Алексей 🤖",
+            "amount": 4200,
+            "handName": "Pair, 9's",
+            "handRank": 2,
+            "bestCards": [
+              {
+                "rank": "9",
+                "suit": "d",
+                "code": "9d"
+              },
+              {
+                "rank": "9",
+                "suit": "c",
+                "code": "9c"
+              },
+              {
+                "rank": "J",
+                "suit": "d",
+                "code": "Jd"
+              },
+              {
+                "rank": "6",
+                "suit": "h",
+                "code": "6h"
+              },
+              {
+                "rank": "5",
+                "suit": "c",
+                "code": "5c"
+              }
+            ]
+          }
+        ],
+        "seats": [
+          {
+            "id": "8046577374",
+            "name": "Dasyntac",
+            "seatIndex": 0,
+            "chips": 2800,
+            "cards": [
+              {
+                "rank": "7",
+                "suit": "h",
+                "code": "7h"
+              },
+              {
+                "rank": "J",
+                "suit": "c",
+                "code": "Jc"
+              }
+            ]
+          },
+          {
+            "id": "bot_tour_1789915144504_0",
+            "name": "Алексей 🤖",
+            "seatIndex": 2,
+            "chips": 8080,
+            "cards": [
+              {
+                "rank": "9",
+                "suit": "d",
+                "code": "9d"
+              },
+              {
+                "rank": "5",
+                "suit": "c",
+                "code": "5c"
+              }
+            ]
+          },
+          {
+            "id": "bot_tour_1789915144504_2",
+            "name": "Михаил 🤖",
+            "seatIndex": 4,
+            "chips": 3370,
+            "cards": [
+              {
+                "rank": "A",
+                "suit": "h",
+                "code": "Ah"
+              },
+              {
+                "rank": "4",
+                "suit": "c",
+                "code": "4c"
+              }
+            ]
+          },
+          {
+            "id": "bot_tour_1789915144504_3",
+            "name": "Анна 🤖",
+            "seatIndex": 5,
+            "chips": 760,
+            "cards": [
+              {
+                "rank": "8",
+                "suit": "s",
+                "code": "8s"
+              },
+              {
+                "rank": "2",
+                "suit": "c",
+                "code": "2c"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hand_1789915612015_twyhw",
+        "timestamp": 1789915612015,
+        "tableId": "table_micro",
+        "tableName": "🥉 Стол Новичков",
+        "smallBlind": 10,
+        "bigBlind": 20,
+        "communityCards": [],
+        "myHoleCards": [
+          {
+            "rank": "8",
+            "suit": "d",
+            "code": "8d"
+          },
+          {
+            "rank": "9",
+            "suit": "h",
+            "code": "9h"
+          }
+        ],
+        "result": "WIN",
+        "netChips": 30,
+        "pot": 30,
+        "actionLog": [
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "BET",
+            "amount": 10,
+            "pot": 10
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 5,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "BET",
+            "amount": 20,
+            "pot": 30
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "FOLD",
+            "pot": 30
+          }
+        ],
+        "winners": [
+          {
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "amount": 30,
+            "handName": "Победа фолдом",
+            "handRank": 0,
+            "bestCards": [
+              {
+                "rank": "8",
+                "suit": "d",
+                "code": "8d"
+              },
+              {
+                "rank": "9",
+                "suit": "h",
+                "code": "9h"
+              }
+            ]
+          }
+        ],
+        "seats": [
+          {
+            "id": "6968710985",
+            "name": "Arman",
+            "seatIndex": 0,
+            "chips": 770,
+            "cards": [
+              {
+                "rank": "5",
+                "suit": "s",
+                "code": "5s"
+              },
+              {
+                "rank": "A",
+                "suit": "d",
+                "code": "Ad"
+              }
+            ]
+          },
+          {
+            "id": "bot_1789914908445_724",
+            "name": "Михаил 🤖",
+            "seatIndex": 4,
+            "chips": 800,
+            "cards": []
+          },
+          {
+            "id": "8046577374",
+            "name": "Dasyntac",
+            "seatIndex": 5,
+            "chips": 830,
+            "cards": [
+              {
+                "rank": "8",
+                "suit": "d",
+                "code": "8d"
+              },
+              {
+                "rank": "9",
+                "suit": "h",
+                "code": "9h"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hand_1789915603256_4e3mi",
+        "timestamp": 1789915603256,
+        "tableId": "table_micro",
+        "tableName": "🥉 Стол Новичков",
+        "smallBlind": 10,
+        "bigBlind": 20,
+        "communityCards": [],
+        "myHoleCards": [
+          {
+            "rank": "7",
+            "suit": "h",
+            "code": "7h"
+          },
+          {
+            "rank": "Q",
+            "suit": "s",
+            "code": "Qs"
+          }
+        ],
+        "result": "WIN",
+        "netChips": 40,
+        "pot": 40,
+        "actionLog": [
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 5,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "BET",
+            "amount": 10,
+            "pot": 10
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "BET",
+            "amount": 20,
+            "pot": 30
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 5,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "CALL",
+            "amount": 10,
+            "pot": 40
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "FOLD",
+            "pot": 40
+          }
+        ],
+        "winners": [
+          {
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "amount": 40,
+            "handName": "Победа фолдом",
+            "handRank": 0,
+            "bestCards": [
+              {
+                "rank": "7",
+                "suit": "h",
+                "code": "7h"
+              },
+              {
+                "rank": "Q",
+                "suit": "s",
+                "code": "Qs"
+              }
+            ]
+          }
+        ],
+        "seats": [
+          {
+            "id": "6968710985",
+            "name": "Arman",
+            "seatIndex": 0,
+            "chips": 780,
+            "cards": [
+              {
+                "rank": "T",
+                "suit": "c",
+                "code": "Tc"
+              },
+              {
+                "rank": "8",
+                "suit": "d",
+                "code": "8d"
+              }
+            ]
+          },
+          {
+            "id": "bot_1789914908445_724",
+            "name": "Михаил 🤖",
+            "seatIndex": 4,
+            "chips": 800,
+            "cards": []
+          },
+          {
+            "id": "8046577374",
+            "name": "Dasyntac",
+            "seatIndex": 5,
+            "chips": 820,
+            "cards": [
+              {
+                "rank": "7",
+                "suit": "h",
+                "code": "7h"
+              },
+              {
+                "rank": "Q",
+                "suit": "s",
+                "code": "Qs"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hand_1789915112580_5hw6w",
+        "timestamp": 1789915112580,
+        "tableId": "table_mid",
+        "tableName": "🥈 Серебряный Стол",
+        "smallBlind": 50,
+        "bigBlind": 100,
+        "communityCards": [
+          {
+            "rank": "5",
+            "suit": "s",
+            "code": "5s"
+          },
+          {
+            "rank": "7",
+            "suit": "s",
+            "code": "7s"
+          },
+          {
+            "rank": "5",
+            "suit": "c",
+            "code": "5c"
+          },
+          {
+            "rank": "2",
+            "suit": "s",
+            "code": "2s"
+          },
+          {
+            "rank": "T",
+            "suit": "h",
+            "code": "Th"
+          }
+        ],
+        "myHoleCards": [
+          {
+            "rank": "Q",
+            "suit": "c",
+            "code": "Qc"
+          },
+          {
+            "rank": "5",
+            "suit": "h",
+            "code": "5h"
+          }
+        ],
+        "result": "WIN",
+        "netChips": 20000,
+        "pot": 20000,
+        "actionLog": [
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 5,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "BET",
+            "amount": 50,
+            "pot": 50
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "BET",
+            "amount": 100,
+            "pot": 150
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 5,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "RAISE",
+            "amount": 200,
+            "pot": 300
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "ALL_IN",
+            "amount": 10000,
+            "pot": 10200
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 5,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "CALL",
+            "amount": 9800,
+            "pot": 20000
+          }
+        ],
+        "winners": [
+          {
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "amount": 20000,
+            "handName": "Three of a Kind, 5's",
+            "handRank": 4,
+            "bestCards": [
+              {
+                "rank": "5",
+                "suit": "h",
+                "code": "5h"
+              },
+              {
+                "rank": "5",
+                "suit": "s",
+                "code": "5s"
+              },
+              {
+                "rank": "5",
+                "suit": "c",
+                "code": "5c"
+              },
+              {
+                "rank": "Q",
+                "suit": "c",
+                "code": "Qc"
+              },
+              {
+                "rank": "T",
+                "suit": "h",
+                "code": "Th"
+              }
+            ]
+          }
+        ],
+        "seats": [
+          {
+            "id": "6968710985",
+            "name": "Arman",
+            "seatIndex": 0,
+            "chips": 0,
+            "cards": [
+              {
+                "rank": "3",
+                "suit": "h",
+                "code": "3h"
+              },
+              {
+                "rank": "K",
+                "suit": "h",
+                "code": "Kh"
+              }
+            ]
+          },
+          {
+            "id": "8046577374",
+            "name": "Dasyntac",
+            "seatIndex": 5,
+            "chips": 20000,
+            "cards": [
+              {
+                "rank": "Q",
+                "suit": "c",
+                "code": "Qc"
+              },
+              {
+                "rank": "5",
+                "suit": "h",
+                "code": "5h"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hand_1789915028006_718r2",
+        "timestamp": 1789915028006,
+        "tableId": "table_micro",
+        "tableName": "🥉 Стол Новичков",
+        "smallBlind": 10,
+        "bigBlind": 20,
+        "communityCards": [
+          {
+            "rank": "T",
+            "suit": "c",
+            "code": "Tc"
+          },
+          {
+            "rank": "9",
+            "suit": "h",
+            "code": "9h"
+          },
+          {
+            "rank": "J",
+            "suit": "d",
+            "code": "Jd"
+          },
+          {
+            "rank": "6",
+            "suit": "s",
+            "code": "6s"
+          },
+          {
+            "rank": "J",
+            "suit": "c",
+            "code": "Jc"
+          }
+        ],
+        "myHoleCards": [
+          {
+            "rank": "8",
+            "suit": "s",
+            "code": "8s"
+          },
+          {
+            "rank": "3",
+            "suit": "d",
+            "code": "3d"
+          }
+        ],
+        "result": "LOSS",
+        "netChips": 0,
+        "pot": 3160,
+        "actionLog": [
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "BET",
+            "amount": 10,
+            "pot": 10
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "BET",
+            "amount": 20,
+            "pot": 30
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "ALL_IN",
+            "amount": 1580,
+            "pot": 1600
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "CALL",
+            "amount": 1560,
+            "pot": 3160
+          }
+        ],
+        "winners": [
+          {
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "amount": 3160,
+            "handName": "Two Pair, J's & 9's",
+            "handRank": 3,
+            "bestCards": [
+              {
+                "rank": "J",
+                "suit": "d",
+                "code": "Jd"
+              },
+              {
+                "rank": "J",
+                "suit": "c",
+                "code": "Jc"
+              },
+              {
+                "rank": "9",
+                "suit": "s",
+                "code": "9s"
+              },
+              {
+                "rank": "9",
+                "suit": "h",
+                "code": "9h"
+              },
+              {
+                "rank": "T",
+                "suit": "c",
+                "code": "Tc"
+              }
+            ]
+          }
+        ],
+        "seats": [
+          {
+            "id": "6968710985",
+            "name": "Arman",
+            "seatIndex": 0,
+            "chips": 3180,
+            "cards": [
+              {
+                "rank": "9",
+                "suit": "s",
+                "code": "9s"
+              },
+              {
+                "rank": "7",
+                "suit": "h",
+                "code": "7h"
+              }
+            ]
+          },
+          {
+            "id": "8046577374",
+            "name": "Dasyntac",
+            "seatIndex": 1,
+            "chips": 0,
+            "cards": [
+              {
+                "rank": "8",
+                "suit": "s",
+                "code": "8s"
+              },
+              {
+                "rank": "3",
+                "suit": "d",
+                "code": "3d"
+              }
+            ]
+          },
+          {
+            "id": "bot_1789914908445_724",
+            "name": "Михаил 🤖",
+            "seatIndex": 4,
+            "chips": 800,
+            "cards": []
+          }
+        ]
+      },
+      {
+        "id": "hand_1789915016574_qaa5j",
+        "timestamp": 1789915016574,
+        "tableId": "table_micro",
+        "tableName": "🥉 Стол Новичков",
+        "smallBlind": 10,
+        "bigBlind": 20,
+        "communityCards": [],
+        "myHoleCards": [
+          {
+            "rank": "4",
+            "suit": "d",
+            "code": "4d"
+          },
+          {
+            "rank": "4",
+            "suit": "h",
+            "code": "4h"
+          }
+        ],
+        "result": "WIN",
+        "netChips": 30,
+        "pot": 30,
+        "actionLog": [
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "BET",
+            "amount": 10,
+            "pot": 10
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "BET",
+            "amount": 20,
+            "pot": 30
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "FOLD",
+            "pot": 30
+          }
+        ],
+        "winners": [
+          {
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "amount": 30,
+            "handName": "Победа фолдом",
+            "handRank": 0,
+            "bestCards": [
+              {
+                "rank": "4",
+                "suit": "d",
+                "code": "4d"
+              },
+              {
+                "rank": "4",
+                "suit": "h",
+                "code": "4h"
+              }
+            ]
+          }
+        ],
+        "seats": [
+          {
+            "id": "6968710985",
+            "name": "Arman",
+            "seatIndex": 0,
+            "chips": 1600,
+            "cards": [
+              {
+                "rank": "6",
+                "suit": "s",
+                "code": "6s"
+              },
+              {
+                "rank": "2",
+                "suit": "s",
+                "code": "2s"
+              }
+            ]
+          },
+          {
+            "id": "8046577374",
+            "name": "Dasyntac",
+            "seatIndex": 1,
+            "chips": 1580,
+            "cards": [
+              {
+                "rank": "4",
+                "suit": "d",
+                "code": "4d"
+              },
+              {
+                "rank": "4",
+                "suit": "h",
+                "code": "4h"
+              }
+            ]
+          },
+          {
+            "id": "bot_1789914908445_724",
+            "name": "Михаил 🤖",
+            "seatIndex": 4,
+            "chips": 800,
+            "cards": []
+          }
+        ]
+      },
+      {
+        "id": "hand_1789915009736_vzbvg",
+        "timestamp": 1789915009736,
+        "tableId": "table_micro",
+        "tableName": "🥉 Стол Новичков",
+        "smallBlind": 10,
+        "bigBlind": 20,
+        "communityCards": [],
+        "myHoleCards": [
+          {
+            "rank": "8",
+            "suit": "d",
+            "code": "8d"
+          },
+          {
+            "rank": "4",
+            "suit": "h",
+            "code": "4h"
+          }
+        ],
+        "result": "FOLD",
+        "netChips": 0,
+        "pot": 30,
+        "actionLog": [
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "BET",
+            "amount": 10,
+            "pot": 10
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "BET",
+            "amount": 20,
+            "pot": 30
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "FOLD",
+            "pot": 30
+          }
+        ],
+        "winners": [
+          {
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "amount": 30,
+            "handName": "Победа фолдом",
+            "handRank": 0,
+            "bestCards": [
+              {
+                "rank": "8",
+                "suit": "h",
+                "code": "8h"
+              },
+              {
+                "rank": "A",
+                "suit": "h",
+                "code": "Ah"
+              }
+            ]
+          }
+        ],
+        "seats": [
+          {
+            "id": "6968710985",
+            "name": "Arman",
+            "seatIndex": 0,
+            "chips": 1610,
+            "cards": [
+              {
+                "rank": "8",
+                "suit": "h",
+                "code": "8h"
+              },
+              {
+                "rank": "A",
+                "suit": "h",
+                "code": "Ah"
+              }
+            ]
+          },
+          {
+            "id": "8046577374",
+            "name": "Dasyntac",
+            "seatIndex": 1,
+            "chips": 1570,
+            "cards": [
+              {
+                "rank": "8",
+                "suit": "d",
+                "code": "8d"
+              },
+              {
+                "rank": "4",
+                "suit": "h",
+                "code": "4h"
+              }
+            ]
+          },
+          {
+            "id": "bot_1789914908445_724",
+            "name": "Михаил 🤖",
+            "seatIndex": 4,
+            "chips": 800,
+            "cards": []
+          }
+        ]
+      },
+      {
+        "id": "hand_1789914988670_a7jd7",
+        "timestamp": 1789914988670,
+        "tableId": "table_micro",
+        "tableName": "🥉 Стол Новичков",
+        "smallBlind": 10,
+        "bigBlind": 20,
+        "communityCards": [
+          {
+            "rank": "6",
+            "suit": "s",
+            "code": "6s"
+          },
+          {
+            "rank": "K",
+            "suit": "s",
+            "code": "Ks"
+          },
+          {
+            "rank": "T",
+            "suit": "s",
+            "code": "Ts"
+          },
+          {
+            "rank": "7",
+            "suit": "d",
+            "code": "7d"
+          },
+          {
+            "rank": "K",
+            "suit": "d",
+            "code": "Kd"
+          }
+        ],
+        "myHoleCards": [
+          {
+            "rank": "4",
+            "suit": "h",
+            "code": "4h"
+          },
+          {
+            "rank": "3",
+            "suit": "c",
+            "code": "3c"
+          }
+        ],
+        "result": "WIN",
+        "netChips": 1580,
+        "pot": 3180,
+        "actionLog": [
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "BET",
+            "amount": 10,
+            "pot": 10
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "BET",
+            "amount": 20,
+            "pot": 30
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "ALL_IN",
+            "amount": 1600,
+            "pot": 1620
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "CALL",
+            "amount": 1560,
+            "pot": 3180
+          }
+        ],
+        "winners": [
+          {
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "amount": 1600,
+            "handName": "Pair, K's",
+            "handRank": 2,
+            "bestCards": [
+              {
+                "rank": "K",
+                "suit": "s",
+                "code": "Ks"
+              },
+              {
+                "rank": "K",
+                "suit": "d",
+                "code": "Kd"
+              },
+              {
+                "rank": "T",
+                "suit": "s",
+                "code": "Ts"
+              },
+              {
+                "rank": "7",
+                "suit": "d",
+                "code": "7d"
+              },
+              {
+                "rank": "6",
+                "suit": "s",
+                "code": "6s"
+              }
+            ]
+          },
+          {
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "amount": 1580,
+            "handName": "Pair, K's",
+            "handRank": 2,
+            "bestCards": [
+              {
+                "rank": "K",
+                "suit": "s",
+                "code": "Ks"
+              },
+              {
+                "rank": "K",
+                "suit": "d",
+                "code": "Kd"
+              },
+              {
+                "rank": "T",
+                "suit": "s",
+                "code": "Ts"
+              },
+              {
+                "rank": "7",
+                "suit": "d",
+                "code": "7d"
+              },
+              {
+                "rank": "6",
+                "suit": "s",
+                "code": "6s"
+              }
+            ]
+          }
+        ],
+        "seats": [
+          {
+            "id": "6968710985",
+            "name": "Arman",
+            "seatIndex": 0,
+            "chips": 1600,
+            "cards": [
+              {
+                "rank": "3",
+                "suit": "s",
+                "code": "3s"
+              },
+              {
+                "rank": "2",
+                "suit": "h",
+                "code": "2h"
+              }
+            ]
+          },
+          {
+            "id": "8046577374",
+            "name": "Dasyntac",
+            "seatIndex": 1,
+            "chips": 1580,
+            "cards": [
+              {
+                "rank": "4",
+                "suit": "h",
+                "code": "4h"
+              },
+              {
+                "rank": "3",
+                "suit": "c",
+                "code": "3c"
+              }
+            ]
+          },
+          {
+            "id": "bot_1789914908445_724",
+            "name": "Михаил 🤖",
+            "seatIndex": 4,
+            "chips": 800,
+            "cards": []
+          }
+        ]
+      },
+      {
+        "id": "hand_1789914976165_ekdui",
+        "timestamp": 1789914976165,
+        "tableId": "table_micro",
+        "tableName": "🥉 Стол Новичков",
+        "smallBlind": 10,
+        "bigBlind": 20,
+        "communityCards": [
+          {
+            "rank": "T",
+            "suit": "h",
+            "code": "Th"
+          },
+          {
+            "rank": "K",
+            "suit": "d",
+            "code": "Kd"
+          },
+          {
+            "rank": "5",
+            "suit": "d",
+            "code": "5d"
+          },
+          {
+            "rank": "K",
+            "suit": "c",
+            "code": "Kc"
+          },
+          {
+            "rank": "3",
+            "suit": "c",
+            "code": "3c"
+          }
+        ],
+        "myHoleCards": [
+          {
+            "rank": "J",
+            "suit": "d",
+            "code": "Jd"
+          },
+          {
+            "rank": "2",
+            "suit": "c",
+            "code": "2c"
+          }
+        ],
+        "result": "WIN",
+        "netChips": 1580,
+        "pot": 3180,
+        "actionLog": [
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "BET",
+            "amount": 10,
+            "pot": 10
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "BET",
+            "amount": 20,
+            "pot": 30
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "ALL_IN",
+            "amount": 2380,
+            "pot": 2400
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "CALL",
+            "amount": 780,
+            "pot": 3180
+          }
+        ],
+        "winners": [
+          {
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "amount": 1600,
+            "handName": "Two Pair, K's & 10's",
+            "handRank": 3,
+            "bestCards": [
+              {
+                "rank": "K",
+                "suit": "d",
+                "code": "Kd"
+              },
+              {
+                "rank": "K",
+                "suit": "c",
+                "code": "Kc"
+              },
+              {
+                "rank": "T",
+                "suit": "d",
+                "code": "Td"
+              },
+              {
+                "rank": "T",
+                "suit": "h",
+                "code": "Th"
+              },
+              {
+                "rank": "9",
+                "suit": "s",
+                "code": "9s"
+              }
+            ]
+          },
+          {
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "amount": 1580,
+            "handName": "Last Player Standing",
+            "handRank": 0,
+            "bestCards": [
+              {
+                "rank": "J",
+                "suit": "d",
+                "code": "Jd"
+              },
+              {
+                "rank": "2",
+                "suit": "c",
+                "code": "2c"
+              }
+            ]
+          }
+        ],
+        "seats": [
+          {
+            "id": "6968710985",
+            "name": "Arman",
+            "seatIndex": 0,
+            "chips": 1600,
+            "cards": [
+              {
+                "rank": "9",
+                "suit": "s",
+                "code": "9s"
+              },
+              {
+                "rank": "T",
+                "suit": "d",
+                "code": "Td"
+              }
+            ]
+          },
+          {
+            "id": "8046577374",
+            "name": "Dasyntac",
+            "seatIndex": 1,
+            "chips": 1580,
+            "cards": [
+              {
+                "rank": "J",
+                "suit": "d",
+                "code": "Jd"
+              },
+              {
+                "rank": "2",
+                "suit": "c",
+                "code": "2c"
+              }
+            ]
+          },
+          {
+            "id": "bot_1789914908445_724",
+            "name": "Михаил 🤖",
+            "seatIndex": 4,
+            "chips": 800,
+            "cards": []
+          }
+        ]
+      },
+      {
+        "id": "hand_1789914965705_46rml",
+        "timestamp": 1789914965705,
+        "tableId": "table_micro",
+        "tableName": "🥉 Стол Новичков",
+        "smallBlind": 10,
+        "bigBlind": 20,
+        "communityCards": [
+          {
+            "rank": "T",
+            "suit": "c",
+            "code": "Tc"
+          },
+          {
+            "rank": "A",
+            "suit": "d",
+            "code": "Ad"
+          },
+          {
+            "rank": "Q",
+            "suit": "s",
+            "code": "Qs"
+          },
+          {
+            "rank": "3",
+            "suit": "s",
+            "code": "3s"
+          },
+          {
+            "rank": "8",
+            "suit": "d",
+            "code": "8d"
+          }
+        ],
+        "myHoleCards": [
+          {
+            "rank": "2",
+            "suit": "d",
+            "code": "2d"
+          },
+          {
+            "rank": "6",
+            "suit": "h",
+            "code": "6h"
+          }
+        ],
+        "result": "WIN",
+        "netChips": 2380,
+        "pot": 3180,
+        "actionLog": [
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "BET",
+            "amount": 10,
+            "pot": 10
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "BET",
+            "amount": 20,
+            "pot": 30
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "ALL_IN",
+            "amount": 400,
+            "pot": 420
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "ALL_IN",
+            "amount": 2780,
+            "pot": 3180
+          }
+        ],
+        "winners": [
+          {
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "amount": 800,
+            "handName": "Pair, A's",
+            "handRank": 2,
+            "bestCards": [
+              {
+                "rank": "A",
+                "suit": "h",
+                "code": "Ah"
+              },
+              {
+                "rank": "A",
+                "suit": "d",
+                "code": "Ad"
+              },
+              {
+                "rank": "Q",
+                "suit": "s",
+                "code": "Qs"
+              },
+              {
+                "rank": "T",
+                "suit": "c",
+                "code": "Tc"
+              },
+              {
+                "rank": "8",
+                "suit": "d",
+                "code": "8d"
+              }
+            ]
+          },
+          {
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "amount": 2380,
+            "handName": "Last Player Standing",
+            "handRank": 0,
+            "bestCards": [
+              {
+                "rank": "2",
+                "suit": "d",
+                "code": "2d"
+              },
+              {
+                "rank": "6",
+                "suit": "h",
+                "code": "6h"
+              }
+            ]
+          }
+        ],
+        "seats": [
+          {
+            "id": "6968710985",
+            "name": "Arman",
+            "seatIndex": 0,
+            "chips": 800,
+            "cards": [
+              {
+                "rank": "6",
+                "suit": "c",
+                "code": "6c"
+              },
+              {
+                "rank": "A",
+                "suit": "h",
+                "code": "Ah"
+              }
+            ]
+          },
+          {
+            "id": "8046577374",
+            "name": "Dasyntac",
+            "seatIndex": 1,
+            "chips": 2380,
+            "cards": [
+              {
+                "rank": "2",
+                "suit": "d",
+                "code": "2d"
+              },
+              {
+                "rank": "6",
+                "suit": "h",
+                "code": "6h"
+              }
+            ]
+          },
+          {
+            "id": "bot_1789914908445_724",
+            "name": "Михаил 🤖",
+            "seatIndex": 4,
+            "chips": 800,
+            "cards": []
+          }
+        ]
+      },
+      {
+        "id": "hand_1789914955557_tr5ig",
+        "timestamp": 1789914955557,
+        "tableId": "table_micro",
+        "tableName": "🥉 Стол Новичков",
+        "smallBlind": 10,
+        "bigBlind": 20,
+        "communityCards": [
+          {
+            "rank": "Q",
+            "suit": "c",
+            "code": "Qc"
+          },
+          {
+            "rank": "7",
+            "suit": "d",
+            "code": "7d"
+          },
+          {
+            "rank": "J",
+            "suit": "c",
+            "code": "Jc"
+          },
+          {
+            "rank": "6",
+            "suit": "h",
+            "code": "6h"
+          },
+          {
+            "rank": "3",
+            "suit": "s",
+            "code": "3s"
+          }
+        ],
+        "myHoleCards": [
+          {
+            "rank": "A",
+            "suit": "s",
+            "code": "As"
+          },
+          {
+            "rank": "2",
+            "suit": "c",
+            "code": "2c"
+          }
+        ],
+        "result": "WIN",
+        "netChips": 2780,
+        "pot": 3180,
+        "actionLog": [
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "BET",
+            "amount": 10,
+            "pot": 10
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "BET",
+            "amount": 20,
+            "pot": 30
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "ALL_IN",
+            "amount": 2980,
+            "pot": 3000
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "CALL",
+            "amount": 180,
+            "pot": 3180
+          }
+        ],
+        "winners": [
+          {
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "amount": 400,
+            "handName": "Pair, J's",
+            "handRank": 2,
+            "bestCards": [
+              {
+                "rank": "J",
+                "suit": "s",
+                "code": "Js"
+              },
+              {
+                "rank": "J",
+                "suit": "c",
+                "code": "Jc"
+              },
+              {
+                "rank": "Q",
+                "suit": "c",
+                "code": "Qc"
+              },
+              {
+                "rank": "8",
+                "suit": "c",
+                "code": "8c"
+              },
+              {
+                "rank": "7",
+                "suit": "d",
+                "code": "7d"
+              }
+            ]
+          },
+          {
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "amount": 2780,
+            "handName": "Last Player Standing",
+            "handRank": 0,
+            "bestCards": [
+              {
+                "rank": "A",
+                "suit": "s",
+                "code": "As"
+              },
+              {
+                "rank": "2",
+                "suit": "c",
+                "code": "2c"
+              }
+            ]
+          }
+        ],
+        "seats": [
+          {
+            "id": "6968710985",
+            "name": "Arman",
+            "seatIndex": 0,
+            "chips": 400,
+            "cards": [
+              {
+                "rank": "8",
+                "suit": "c",
+                "code": "8c"
+              },
+              {
+                "rank": "J",
+                "suit": "s",
+                "code": "Js"
+              }
+            ]
+          },
+          {
+            "id": "8046577374",
+            "name": "Dasyntac",
+            "seatIndex": 1,
+            "chips": 2780,
+            "cards": [
+              {
+                "rank": "A",
+                "suit": "s",
+                "code": "As"
+              },
+              {
+                "rank": "2",
+                "suit": "c",
+                "code": "2c"
+              }
+            ]
+          },
+          {
+            "id": "bot_1789914908445_724",
+            "name": "Михаил 🤖",
+            "seatIndex": 4,
+            "chips": 800,
+            "cards": []
+          }
+        ]
+      },
+      {
+        "id": "hand_1789914944042_31465",
+        "timestamp": 1789914944042,
+        "tableId": "table_micro",
+        "tableName": "🥉 Стол Новичков",
+        "smallBlind": 10,
+        "bigBlind": 20,
+        "communityCards": [
+          {
+            "rank": "8",
+            "suit": "c",
+            "code": "8c"
+          },
+          {
+            "rank": "9",
+            "suit": "c",
+            "code": "9c"
+          },
+          {
+            "rank": "A",
+            "suit": "s",
+            "code": "As"
+          },
+          {
+            "rank": "Q",
+            "suit": "c",
+            "code": "Qc"
+          },
+          {
+            "rank": "K",
+            "suit": "d",
+            "code": "Kd"
+          }
+        ],
+        "myHoleCards": [
+          {
+            "rank": "8",
+            "suit": "d",
+            "code": "8d"
+          },
+          {
+            "rank": "4",
+            "suit": "h",
+            "code": "4h"
+          }
+        ],
+        "result": "WIN",
+        "netChips": 80,
+        "pot": 280,
+        "actionLog": [
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "BET",
+            "amount": 10,
+            "pot": 10
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "BET",
+            "amount": 20,
+            "pot": 30
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "ALL_IN",
+            "amount": 100,
+            "pot": 120
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "RAISE",
+            "amount": 180,
+            "pot": 280
+          }
+        ],
+        "winners": [
+          {
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "amount": 200,
+            "handName": "Pair, 10's",
+            "handRank": 2,
+            "bestCards": [
+              {
+                "rank": "T",
+                "suit": "d",
+                "code": "Td"
+              },
+              {
+                "rank": "T",
+                "suit": "h",
+                "code": "Th"
+              },
+              {
+                "rank": "A",
+                "suit": "s",
+                "code": "As"
+              },
+              {
+                "rank": "K",
+                "suit": "d",
+                "code": "Kd"
+              },
+              {
+                "rank": "Q",
+                "suit": "c",
+                "code": "Qc"
+              }
+            ]
+          },
+          {
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "amount": 80,
+            "handName": "Last Player Standing",
+            "handRank": 0,
+            "bestCards": [
+              {
+                "rank": "8",
+                "suit": "d",
+                "code": "8d"
+              },
+              {
+                "rank": "4",
+                "suit": "h",
+                "code": "4h"
+              }
+            ]
+          }
+        ],
+        "seats": [
+          {
+            "id": "6968710985",
+            "name": "Arman",
+            "seatIndex": 0,
+            "chips": 200,
+            "cards": [
+              {
+                "rank": "T",
+                "suit": "d",
+                "code": "Td"
+              },
+              {
+                "rank": "T",
+                "suit": "h",
+                "code": "Th"
+              }
+            ]
+          },
+          {
+            "id": "8046577374",
+            "name": "Dasyntac",
+            "seatIndex": 1,
+            "chips": 2980,
+            "cards": [
+              {
+                "rank": "8",
+                "suit": "d",
+                "code": "8d"
+              },
+              {
+                "rank": "4",
+                "suit": "h",
+                "code": "4h"
+              }
+            ]
+          },
+          {
+            "id": "bot_1789914908445_724",
+            "name": "Михаил 🤖",
+            "seatIndex": 4,
+            "chips": 800,
+            "cards": []
+          }
+        ]
+      },
+      {
+        "id": "hand_1789914932875_6jnax",
+        "timestamp": 1789914932875,
+        "tableId": "table_micro",
+        "tableName": "🥉 Стол Новичков",
+        "smallBlind": 10,
+        "bigBlind": 20,
+        "communityCards": [
+          {
+            "rank": "6",
+            "suit": "s",
+            "code": "6s"
+          },
+          {
+            "rank": "5",
+            "suit": "d",
+            "code": "5d"
+          },
+          {
+            "rank": "4",
+            "suit": "d",
+            "code": "4d"
+          },
+          {
+            "rank": "J",
+            "suit": "d",
+            "code": "Jd"
+          },
+          {
+            "rank": "2",
+            "suit": "h",
+            "code": "2h"
+          }
+        ],
+        "myHoleCards": [
+          {
+            "rank": "A",
+            "suit": "d",
+            "code": "Ad"
+          },
+          {
+            "rank": "T",
+            "suit": "c",
+            "code": "Tc"
+          }
+        ],
+        "result": "WIN",
+        "netChips": 3080,
+        "pot": 3080,
+        "actionLog": [
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "BET",
+            "amount": 10,
+            "pot": 10
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "BET",
+            "amount": 20,
+            "pot": 30
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "ALL_IN",
+            "amount": 1540,
+            "pot": 1560
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "CALL",
+            "amount": 1520,
+            "pot": 3080
+          }
+        ],
+        "winners": [
+          {
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "amount": 3080,
+            "handName": "A High",
+            "handRank": 1,
+            "bestCards": [
+              {
+                "rank": "A",
+                "suit": "d",
+                "code": "Ad"
+              },
+              {
+                "rank": "J",
+                "suit": "d",
+                "code": "Jd"
+              },
+              {
+                "rank": "T",
+                "suit": "c",
+                "code": "Tc"
+              },
+              {
+                "rank": "6",
+                "suit": "s",
+                "code": "6s"
+              },
+              {
+                "rank": "5",
+                "suit": "d",
+                "code": "5d"
+              }
+            ]
+          }
+        ],
+        "seats": [
+          {
+            "id": "6968710985",
+            "name": "Arman",
+            "seatIndex": 0,
+            "chips": 100,
+            "cards": [
+              {
+                "rank": "Q",
+                "suit": "s",
+                "code": "Qs"
+              },
+              {
+                "rank": "8",
+                "suit": "c",
+                "code": "8c"
+              }
+            ]
+          },
+          {
+            "id": "8046577374",
+            "name": "Dasyntac",
+            "seatIndex": 1,
+            "chips": 3080,
+            "cards": [
+              {
+                "rank": "A",
+                "suit": "d",
+                "code": "Ad"
+              },
+              {
+                "rank": "T",
+                "suit": "c",
+                "code": "Tc"
+              }
+            ]
+          },
+          {
+            "id": "bot_1789914908445_724",
+            "name": "Михаил 🤖",
+            "seatIndex": 4,
+            "chips": 800,
+            "cards": []
+          }
+        ]
+      },
+      {
+        "id": "hand_1789914921887_d5vqd",
+        "timestamp": 1789914921887,
+        "tableId": "table_micro",
+        "tableName": "🥉 Стол Новичков",
+        "smallBlind": 10,
+        "bigBlind": 20,
+        "communityCards": [
+          {
+            "rank": "A",
+            "suit": "s",
+            "code": "As"
+          },
+          {
+            "rank": "J",
+            "suit": "c",
+            "code": "Jc"
+          },
+          {
+            "rank": "T",
+            "suit": "c",
+            "code": "Tc"
+          },
+          {
+            "rank": "8",
+            "suit": "h",
+            "code": "8h"
+          },
+          {
+            "rank": "6",
+            "suit": "h",
+            "code": "6h"
+          }
+        ],
+        "myHoleCards": [
+          {
+            "rank": "2",
+            "suit": "d",
+            "code": "2d"
+          },
+          {
+            "rank": "Q",
+            "suit": "c",
+            "code": "Qc"
+          }
+        ],
+        "result": "LOSS",
+        "netChips": 0,
+        "pot": 1640,
+        "actionLog": [
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "BET",
+            "amount": 10,
+            "pot": 10
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "BET",
+            "amount": 20,
+            "pot": 30
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "ALL_IN",
+            "amount": 820,
+            "pot": 840
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "CALL",
+            "amount": 800,
+            "pot": 1640
+          }
+        ],
+        "winners": [
+          {
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "amount": 1640,
+            "handName": "A High",
+            "handRank": 1,
+            "bestCards": [
+              {
+                "rank": "A",
+                "suit": "s",
+                "code": "As"
+              },
+              {
+                "rank": "K",
+                "suit": "h",
+                "code": "Kh"
+              },
+              {
+                "rank": "J",
+                "suit": "c",
+                "code": "Jc"
+              },
+              {
+                "rank": "T",
+                "suit": "c",
+                "code": "Tc"
+              },
+              {
+                "rank": "9",
+                "suit": "s",
+                "code": "9s"
+              }
+            ]
+          }
+        ],
+        "seats": [
+          {
+            "id": "6968710985",
+            "name": "Arman",
+            "seatIndex": 0,
+            "chips": 1640,
+            "cards": [
+              {
+                "rank": "9",
+                "suit": "s",
+                "code": "9s"
+              },
+              {
+                "rank": "K",
+                "suit": "h",
+                "code": "Kh"
+              }
+            ]
+          },
+          {
+            "id": "8046577374",
+            "name": "Dasyntac",
+            "seatIndex": 1,
+            "chips": 1540,
+            "cards": [
+              {
+                "rank": "2",
+                "suit": "d",
+                "code": "2d"
+              },
+              {
+                "rank": "Q",
+                "suit": "c",
+                "code": "Qc"
+              }
+            ]
+          },
+          {
+            "id": "bot_1789914908445_724",
+            "name": "Михаил 🤖",
+            "seatIndex": 4,
+            "chips": 800,
+            "cards": []
+          }
+        ]
+      },
+      {
+        "id": "hand_1789914908941_iqmcs",
+        "timestamp": 1789914908941,
+        "tableId": "table_micro",
+        "tableName": "🥉 Стол Новичков",
+        "smallBlind": 10,
+        "bigBlind": 20,
+        "communityCards": [
+          {
+            "rank": "A",
+            "suit": "h",
+            "code": "Ah"
+          },
+          {
+            "rank": "K",
+            "suit": "c",
+            "code": "Kc"
+          },
+          {
+            "rank": "T",
+            "suit": "c",
+            "code": "Tc"
+          },
+          {
+            "rank": "T",
+            "suit": "s",
+            "code": "Ts"
+          },
+          {
+            "rank": "9",
+            "suit": "h",
+            "code": "9h"
+          }
+        ],
+        "myHoleCards": [
+          {
+            "rank": "9",
+            "suit": "d",
+            "code": "9d"
+          },
+          {
+            "rank": "Q",
+            "suit": "d",
+            "code": "Qd"
+          }
+        ],
+        "result": "WIN",
+        "netChips": 2360,
+        "pot": 3180,
+        "actionLog": [
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "BET",
+            "amount": 10,
+            "pot": 10
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "BET",
+            "amount": 20,
+            "pot": 30
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "CALL",
+            "amount": 10,
+            "pot": 40
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 0,
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "action": "ALL_IN",
+            "amount": 2000,
+            "pot": 2020
+          },
+          {
+            "stage": "PREFLOP",
+            "seatIndex": 1,
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "action": "CALL",
+            "amount": 1160,
+            "pot": 3180
+          }
+        ],
+        "winners": [
+          {
+            "playerId": "8046577374",
+            "playerName": "Dasyntac",
+            "amount": 2360,
+            "handName": "Two Pair, 10's & 9's",
+            "handRank": 3,
+            "bestCards": [
+              {
+                "rank": "T",
+                "suit": "c",
+                "code": "Tc"
+              },
+              {
+                "rank": "T",
+                "suit": "s",
+                "code": "Ts"
+              },
+              {
+                "rank": "9",
+                "suit": "d",
+                "code": "9d"
+              },
+              {
+                "rank": "9",
+                "suit": "h",
+                "code": "9h"
+              },
+              {
+                "rank": "A",
+                "suit": "h",
+                "code": "Ah"
+              }
+            ]
+          },
+          {
+            "playerId": "6968710985",
+            "playerName": "Arman",
+            "amount": 820,
+            "handName": "Last Player Standing",
+            "handRank": 0,
+            "bestCards": [
+              {
+                "rank": "4",
+                "suit": "d",
+                "code": "4d"
+              },
+              {
+                "rank": "J",
+                "suit": "c",
+                "code": "Jc"
+              }
+            ]
+          }
+        ],
+        "seats": [
+          {
+            "id": "6968710985",
+            "name": "Arman",
+            "seatIndex": 0,
+            "chips": 820,
+            "cards": [
+              {
+                "rank": "4",
+                "suit": "d",
+                "code": "4d"
+              },
+              {
+                "rank": "J",
+                "suit": "c",
+                "code": "Jc"
+              }
+            ]
+          },
+          {
+            "id": "8046577374",
+            "name": "Dasyntac",
+            "seatIndex": 1,
+            "chips": 2360,
+            "cards": [
+              {
+                "rank": "9",
+                "suit": "d",
+                "code": "9d"
+              },
+              {
+                "rank": "Q",
+                "suit": "d",
+                "code": "Qd"
+              }
+            ]
+          },
+          {
+            "id": "bot_1789914908445_724",
+            "name": "Михаил 🤖",
+            "seatIndex": 4,
+            "chips": 800,
+            "cards": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "test_player_1",
+    "username": "poker_pro",
+    "firstName": "Игрок",
+    "chips": 2500,
+    "handsPlayed": 0,
+    "handsWon": 0,
+    "lastDailyBonus": 0,
+    "referralCount": 0,
+    "referralEarnings": 0,
+    "invitedFriends": [],
+    "purchases": []
+  }
+]

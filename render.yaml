@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: royal-poker-club
+    env: node
+    plan: free
+    region: frankfurt
+    buildCommand: npm run install:all && npm run build
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: NODE_ENV
+        value: production
+      - key: BOT_TOKEN
+        value: 8712635587:AAFBtXLcKnrSCkwGBSPTXTnDr2ANz510XPE
+      - key: BOT_USERNAME
+        value: RoyalsPokerBot
