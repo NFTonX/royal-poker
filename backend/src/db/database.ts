@@ -64,6 +64,11 @@ export interface UserRecord {
 
   // Hand History (last 30 hands)
   handHistory: HandRecord[];
+
+  // Crypto / TON
+  tonBalance: number;
+  tonWalletAddress?: string;
+  lastSpinTime: number;
 }
 
 export const ACHIEVEMENTS_CATALOG: Achievement[] = [
@@ -457,12 +462,16 @@ export class Database {
           avatarFrame: 'frame_bronze',
           tableTheme: 'table_emerald'
         },
-        handHistory: []
+        handHistory: [],
+        tonBalance: 0,
+        lastSpinTime: 0
       };
       this.users.set(id, user);
       this.save();
     } else {
       // Ensure all fields exist for migrated accounts
+      if (user.tonBalance === undefined) user.tonBalance = 0;
+      if (user.lastSpinTime === undefined) user.lastSpinTime = 0;
       if (user.referralCount === undefined) user.referralCount = 0;
       if (user.referralEarnings === undefined) user.referralEarnings = 0;
       if (!user.invitedFriends) user.invitedFriends = [];
@@ -963,6 +972,98 @@ export class Database {
     this.addXp(id, stars * 10);
     this.save();
     return user.chips;
+  }
+
+  public updateTonBalance(id: string, delta: number): number {
+    const user = this.users.get(id);
+    if (!user) return 0;
+    user.tonBalance = Math.max(0, parseFloat(((user.tonBalance || 0) + delta).toFixed(4)));
+    this.save();
+    return user.tonBalance;
+  }
+
+  public deductTon(id: string, amount: number): boolean {
+    const user = this.users.get(id);
+    if (!user || (user.tonBalance || 0) < amount || amount < 0) return false;
+    user.tonBalance = parseFloat((user.tonBalance - amount).toFixed(4));
+    this.save();
+    return true;
+  }
+
+  public setTonWallet(id: string, address: string): void {
+    const user = this.users.get(id);
+    if (!user) return;
+    user.tonWalletAddress = address;
+    this.save();
+  }
+
+  public spinLuckyWheel(id: string): {
+    success: boolean;
+    prize?: { type: 'chips' | 'ton' | 'xp'; amount: number; label: string };
+    nextSpinIn: number;
+    message: string;
+  } {
+    const user = this.users.get(id);
+    if (!user) return { success: false, nextSpinIn: 0, message: 'Пользователь не найден' };
+
+    const now = Date.now();
+    const cooldown = 24 * 60 * 60 * 1000;
+    const timeSinceLast = now - (user.lastSpinTime || 0);
+
+    if (timeSinceLast < cooldown) {
+      return {
+        success: false,
+        nextSpinIn: cooldown - timeSinceLast,
+        message: 'Колесо уже прокручено сегодня. Возвращайтесь позже!'
+      };
+    }
+
+    // Weighted prizes
+    const prizes: { type: 'chips' | 'ton' | 'xp'; amount: number; label: string; weight: number }[] = [
+      { type: 'chips', amount: 500, label: '500 Фишек', weight: 35 },
+      { type: 'chips', amount: 1000, label: '1,000 Фишек', weight: 25 },
+      { type: 'chips', amount: 2500, label: '2,500 Фишек', weight: 18 },
+      { type: 'chips', amount: 5000, label: '5,000 Фишек', weight: 10 },
+      { type: 'chips', amount: 10000, label: '10,000 Фишек', weight: 6 },
+      { type: 'ton', amount: 0.05, label: '💎 0.05 TON', weight: 3.5 },
+      { type: 'ton', amount: 0.1, label: '💎 0.1 TON', weight: 2 },
+      { type: 'ton', amount: 0.5, label: '💎 0.5 TON (ДЖЕКПОТ!)', weight: 0.5 }
+    ];
+
+    const totalWeight = prizes.reduce((sum, p) => sum + p.weight, 0);
+    let rand = Math.random() * totalWeight;
+    let selectedPrize = prizes[0];
+
+    for (const p of prizes) {
+      if (rand < p.weight) {
+        selectedPrize = p;
+        break;
+      }
+      rand -= p.weight;
+    }
+
+    user.lastSpinTime = now;
+
+    if (selectedPrize.type === 'chips') {
+      user.chips += selectedPrize.amount;
+    } else if (selectedPrize.type === 'ton') {
+      user.tonBalance = parseFloat(((user.tonBalance || 0) + selectedPrize.amount).toFixed(4));
+    } else if (selectedPrize.type === 'xp') {
+      this.addXp(id, selectedPrize.amount);
+    }
+
+    this.save();
+
+    return {
+      success: true,
+      prize: {
+        type: selectedPrize.type,
+        amount: selectedPrize.amount,
+        label: selectedPrize.label
+      },
+      nextSpinIn: cooldown,
+      message: `Поздравляем! Вы выиграли ${selectedPrize.label}!`
+    };
   }
 
   public getLeaderboard(limit: number = 10): { id: string; name: string; chips: number; handsWon: number; level: number }[] {

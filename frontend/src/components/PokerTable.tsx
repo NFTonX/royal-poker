@@ -13,6 +13,7 @@ interface PokerTableProps {
   tableState: TableState;
   currentUserId: string;
   userChips: number;
+  userTonBalance?: number;
   onLeave: () => void;
   onJoin: (seatIndex: number, buyIn: number) => void;
   onOpenShop: () => void;
@@ -37,6 +38,7 @@ export const PokerTable: React.FC<PokerTableProps> = ({
   tableState,
   currentUserId,
   userChips,
+  userTonBalance = 0,
   onLeave,
   onJoin,
   onOpenShop,
@@ -125,11 +127,15 @@ export const PokerTable: React.FC<PokerTableProps> = ({
               <span className="text-xs sm:text-sm font-bold text-white leading-tight">
                 {tableState.name || `Table #${tableState.id ? tableState.id.substring(0, 4) : '1287'}`}
               </span>
-              {tableState.isVip && (
-                <span className="text-[9px] font-black px-1.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 shadow-sm whitespace-nowrap">
-                  👑 VIP 100⭐️
+              {tableState.currency === 'TON' ? (
+                <span className="text-[9px] font-black px-1.5 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-400/40 shadow-sm whitespace-nowrap">
+                  💎 TON
                 </span>
-              )}
+              ) : tableState.isVip ? (
+                <span className="text-[9px] font-black px-1.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 shadow-sm whitespace-nowrap">
+                  👑 VIP {tableState.minStarsRequired || 10}⭐️
+                </span>
+              ) : null}
             </div>
             <span className="text-[10px] sm:text-[11px] text-slate-400 leading-tight">
               Texas Hold'em · {activePlayersCount}/{tableState.seats.length}
@@ -151,22 +157,33 @@ export const PokerTable: React.FC<PokerTableProps> = ({
             {isMuted ? <VolumeX className="w-3 h-3 text-rose-400" /> : <Volume2 className="w-3 h-3 text-slate-300" />}
           </button>
 
-          {/* Chips Pill with Red Chip and Green [+] Button */}
+          {/* Chips / TON Pill with Icon and Green [+] Button */}
           <div className="flex items-center gap-1.5 bg-[#0e1624] border border-white/[0.08] rounded-full pl-2 pr-1 py-1 shadow-inner">
-            {/* Red Chip Icon */}
-            <div className="w-4 h-4 rounded-full bg-red-600 border border-white/80 flex items-center justify-center shadow-sm">
-              <div className="w-2 h-2 rounded-full border border-dashed border-white/80" />
-            </div>
-            
-            <span className="text-xs font-black font-mono text-white pr-0.5">
-              {userChips.toLocaleString()}
-            </span>
+            {tableState.currency === 'TON' ? (
+              <>
+                <span className="text-xs">💎</span>
+                <span className="text-xs font-black font-mono text-cyan-300 pr-0.5">
+                  {(userTonBalance || 0).toFixed(2)}
+                </span>
+              </>
+            ) : (
+              <>
+                {/* Red Chip Icon */}
+                <div className="w-4 h-4 rounded-full bg-red-600 border border-white/80 flex items-center justify-center shadow-sm">
+                  <div className="w-2 h-2 rounded-full border border-dashed border-white/80" />
+                </div>
+                
+                <span className="text-xs font-black font-mono text-white pr-0.5">
+                  {userChips.toLocaleString()}
+                </span>
+              </>
+            )}
 
             {/* Green [+] Button */}
             <button
               onClick={onOpenShop}
               className="w-5 h-5 rounded-full bg-emerald-500 hover:bg-emerald-400 active:scale-95 text-white flex items-center justify-center shadow-md transition"
-              title="Купить фишки за Telegram Stars"
+              title={tableState.currency === 'TON' ? 'Пополнить TON' : 'Купить фишки за Telegram Stars'}
             >
               <Plus className="w-3 h-3 stroke-[3]" />
             </button>
@@ -220,7 +237,11 @@ export const PokerTable: React.FC<PokerTableProps> = ({
                       <div className="w-1.5 h-1.5 rounded-full border border-dashed border-white/80" />
                     </div>
                     <span className="text-sm sm:text-base font-black font-mono text-white drop-shadow">
-                      {tableState.totalPot > 0 ? tableState.totalPot.toLocaleString() : '0'}
+                      {tableState.totalPot > 0
+                        ? tableState.currency === 'TON'
+                          ? `${tableState.totalPot.toFixed(2)} TON`
+                          : tableState.totalPot.toLocaleString()
+                        : '0'}
                     </span>
                   </div>
                 </div>
@@ -351,12 +372,17 @@ export const PokerTable: React.FC<PokerTableProps> = ({
         onClose={() => setBuyInModalOpen(false)}
         tableState={tableState}
         userChips={userChips}
+        userTonBalance={userTonBalance}
         selectedSeat={targetSeatIndex}
         onConfirmJoin={(seatIndex, buyIn) => {
           onJoin(seatIndex, buyIn);
           setBuyInModalOpen(false);
         }}
         onOpenShop={() => {
+          setBuyInModalOpen(false);
+          onOpenShop();
+        }}
+        onOpenTonWallet={() => {
           setBuyInModalOpen(false);
           onOpenShop();
         }}

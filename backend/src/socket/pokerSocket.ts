@@ -36,144 +36,37 @@ export class TableManager {
   }
 
   private initDefaultTables(): void {
-    const tableConfigs = [
-      // --- 13 Регулярных столов ---
-      {
-        id: 'table_micro_1',
-        name: '🥉 Стол Новичков #1',
-        smallBlind: 5,
-        bigBlind: 10,
-        minBuyIn: 200,
-        maxBuyIn: 1000
-      },
-      {
-        id: 'table_micro_2',
-        name: '🥉 Стол Новичков #2',
-        smallBlind: 10,
-        bigBlind: 20,
-        minBuyIn: 400,
-        maxBuyIn: 2000
-      },
-      {
-        id: 'table_micro_3',
-        name: '🥉 Техасский Ветерок',
-        smallBlind: 15,
-        bigBlind: 30,
-        minBuyIn: 600,
-        maxBuyIn: 3000
-      },
-      {
-        id: 'table_low_1',
-        name: '🔹 Бронзовый Клуб',
-        smallBlind: 25,
-        bigBlind: 50,
-        minBuyIn: 1000,
-        maxBuyIn: 5000
-      },
-      {
-        id: 'table_low_2',
-        name: '🔹 Лас-Вегас Экспресс',
-        smallBlind: 30,
-        bigBlind: 60,
-        minBuyIn: 1200,
-        maxBuyIn: 6000
-      },
-      {
-        id: 'table_mid_1',
-        name: '🥈 Серебряный Стол',
-        smallBlind: 50,
-        bigBlind: 100,
-        minBuyIn: 2000,
-        maxBuyIn: 10000
-      },
-      {
-        id: 'table_mid_2',
-        name: '🥈 Невада Классик',
-        smallBlind: 75,
-        bigBlind: 150,
-        minBuyIn: 3000,
-        maxBuyIn: 15000
-      },
-      {
-        id: 'table_mid_3',
-        name: '🥈 Атлантик Сити',
-        smallBlind: 100,
-        bigBlind: 200,
-        minBuyIn: 4000,
-        maxBuyIn: 20000
-      },
-      {
-        id: 'table_high_1',
-        name: '🥇 Золотой Стол',
-        smallBlind: 200,
-        bigBlind: 400,
-        minBuyIn: 8000,
-        maxBuyIn: 40000
-      },
-      {
-        id: 'table_high_2',
-        name: '🥇 Монте-Карло',
-        smallBlind: 300,
-        bigBlind: 600,
-        minBuyIn: 12000,
-        maxBuyIn: 60000
-      },
-      {
-        id: 'table_high_3',
-        name: '🥇 Макао Премиум',
-        smallBlind: 500,
-        bigBlind: 1000,
-        minBuyIn: 20000,
-        maxBuyIn: 100000
-      },
-      {
-        id: 'table_pro_1',
-        name: '💎 Хайроллер Арена',
-        smallBlind: 1000,
-        bigBlind: 2000,
-        minBuyIn: 40000,
-        maxBuyIn: 200000
-      },
-      {
-        id: 'table_pro_2',
-        name: '💎 Легенды Покера',
-        smallBlind: 2500,
-        bigBlind: 5000,
-        minBuyIn: 100000,
-        maxBuyIn: 500000
-      },
+    const tableConfigs: any[] = [
+      // --- 10 Регулярных столов (за фишки) ---
+      { id: 'table_chips_1', name: '🥉 Новички #1', smallBlind: 10, bigBlind: 20, minBuyIn: 400, maxBuyIn: 2000, currency: 'CHIPS' },
+      { id: 'table_chips_2', name: '🥉 Новички #2', smallBlind: 15, bigBlind: 30, minBuyIn: 600, maxBuyIn: 3000, currency: 'CHIPS' },
+      { id: 'table_chips_3', name: '🥉 Техасский Ветерок', smallBlind: 25, bigBlind: 50, minBuyIn: 1000, maxBuyIn: 5000, currency: 'CHIPS' },
+      { id: 'table_chips_4', name: '🔹 Бронзовый Клуб', smallBlind: 50, bigBlind: 100, minBuyIn: 2000, maxBuyIn: 10000, currency: 'CHIPS' },
+      { id: 'table_chips_5', name: '🔹 Лас-Вегас Экспресс', smallBlind: 75, bigBlind: 150, minBuyIn: 3000, maxBuyIn: 15000, currency: 'CHIPS' },
+      { id: 'table_chips_6', name: '🥈 Серебряный Стол', smallBlind: 100, bigBlind: 200, minBuyIn: 4000, maxBuyIn: 20000, currency: 'CHIPS' },
+      { id: 'table_chips_7', name: '🥈 Невада Классик', smallBlind: 250, bigBlind: 500, minBuyIn: 10000, maxBuyIn: 50000, currency: 'CHIPS' },
+      { id: 'table_chips_8', name: '🥇 Золотой Стол', smallBlind: 500, bigBlind: 1000, minBuyIn: 20000, maxBuyIn: 100000, currency: 'CHIPS' },
+      { id: 'table_chips_9', name: '🥇 Монте-Карло', smallBlind: 1000, bigBlind: 2000, minBuyIn: 40000, maxBuyIn: 200000, currency: 'CHIPS' },
+      { id: 'table_chips_10', name: '💎 Хайроллер Арена', smallBlind: 2500, bigBlind: 5000, minBuyIn: 100000, maxBuyIn: 500000, currency: 'CHIPS' },
 
-      // --- 3 VIP Стола (только при покупке от 100 Telegram Stars) ---
-      {
-        id: 'table_vip_emerald',
-        name: '👑 VIP Изумрудный Салон',
-        smallBlind: 500,
-        bigBlind: 1000,
-        minBuyIn: 25000,
-        maxBuyIn: 125000,
-        minStarsRequired: 100,
-        isVip: true
-      },
-      {
-        id: 'table_vip_ruby',
-        name: '👑 VIP Рубиновый Клуб',
-        smallBlind: 1000,
-        bigBlind: 2000,
-        minBuyIn: 50000,
-        maxBuyIn: 250000,
-        minStarsRequired: 100,
-        isVip: true
-      },
-      {
-        id: 'table_vip_royal',
-        name: '👑 VIP Royal Diamond',
-        smallBlind: 2500,
-        bigBlind: 5000,
-        minBuyIn: 125000,
-        maxBuyIn: 1000000,
-        minStarsRequired: 100,
-        isVip: true
-      }
+      // --- 5 VIP Столов (за Telegram Stars: 10, 50, 100, 250, 500) ---
+      { id: 'table_vip_bronze', name: '👑 VIP Bronze (10 ⭐️)', smallBlind: 250, bigBlind: 500, minBuyIn: 10000, maxBuyIn: 50000, minStarsRequired: 10, isVip: true, currency: 'CHIPS' },
+      { id: 'table_vip_silver', name: '👑 VIP Silver (50 ⭐️)', smallBlind: 500, bigBlind: 1000, minBuyIn: 20000, maxBuyIn: 100000, minStarsRequired: 50, isVip: true, currency: 'CHIPS' },
+      { id: 'table_vip_gold', name: '👑 VIP Gold (100 ⭐️)', smallBlind: 1000, bigBlind: 2000, minBuyIn: 40000, maxBuyIn: 200000, minStarsRequired: 100, isVip: true, currency: 'CHIPS' },
+      { id: 'table_vip_platinum', name: '👑 VIP Platinum (250 ⭐️)', smallBlind: 2500, bigBlind: 5000, minBuyIn: 100000, maxBuyIn: 500000, minStarsRequired: 250, isVip: true, currency: 'CHIPS' },
+      { id: 'table_vip_diamond', name: '👑 VIP Royal Diamond (500 ⭐️)', smallBlind: 5000, bigBlind: 10000, minBuyIn: 200000, maxBuyIn: 1000000, minStarsRequired: 500, isVip: true, currency: 'CHIPS' },
+
+      // --- 10 Crypto Столов (прямая игра на TON, мин. бай-ин 2 TON) ---
+      { id: 'table_ton_1', name: '💎 TON Micro #1', smallBlind: 0.02, bigBlind: 0.04, minBuyIn: 2, maxBuyIn: 10, currency: 'TON' },
+      { id: 'table_ton_2', name: '💎 TON Micro #2', smallBlind: 0.02, bigBlind: 0.04, minBuyIn: 2, maxBuyIn: 10, currency: 'TON' },
+      { id: 'table_ton_3', name: '💎 TON Low #1', smallBlind: 0.05, bigBlind: 0.10, minBuyIn: 5, maxBuyIn: 25, currency: 'TON' },
+      { id: 'table_ton_4', name: '💎 TON Low #2', smallBlind: 0.05, bigBlind: 0.10, minBuyIn: 5, maxBuyIn: 25, currency: 'TON' },
+      { id: 'table_ton_5', name: '💎 TON Mid #1', smallBlind: 0.10, bigBlind: 0.20, minBuyIn: 10, maxBuyIn: 50, currency: 'TON' },
+      { id: 'table_ton_6', name: '💎 TON Mid #2', smallBlind: 0.10, bigBlind: 0.20, minBuyIn: 10, maxBuyIn: 50, currency: 'TON' },
+      { id: 'table_ton_7', name: '💎 TON High #1', smallBlind: 0.25, bigBlind: 0.50, minBuyIn: 25, maxBuyIn: 125, currency: 'TON' },
+      { id: 'table_ton_8', name: '💎 TON High #2', smallBlind: 0.50, bigBlind: 1.00, minBuyIn: 50, maxBuyIn: 250, currency: 'TON' },
+      { id: 'table_ton_9', name: '💎 TON Whale #1', smallBlind: 1.00, bigBlind: 2.00, minBuyIn: 100, maxBuyIn: 500, currency: 'TON' },
+      { id: 'table_ton_10', name: '💎 TON Royal Whale #2', smallBlind: 2.50, bigBlind: 5.00, minBuyIn: 250, maxBuyIn: 1250, currency: 'TON' }
     ];
 
     for (const cfg of tableConfigs) {
@@ -190,16 +83,21 @@ export class TableManager {
       table.setOnPlayerBusted((player) => {
         // Refund any leftover chips to DB
         if (player.chips > 0) {
-          db.updateChips(player.id, player.chips);
+          if (table.currency === 'TON') {
+            db.updateTonBalance(player.id, player.chips);
+          } else {
+            db.updateChips(player.id, player.chips);
+          }
         }
         // Notify the player socket
         for (const [socketId, info] of this.socketUserMap.entries()) {
           if (info.userId === player.id) {
             const s = this.io.sockets.sockets.get(socketId);
             if (s) {
-              s.emit('player_busted', {
-                message: 'У вас закончились фишки за столом. Пополните баланс за Telegram Stars, чтобы занять место!'
-              });
+              const msg = table.currency === 'TON'
+                ? 'У вас закончился стек за TON-столом.'
+                : 'У вас закончились фишки за столом. Пополните баланс за Telegram Stars, чтобы занять место!';
+              s.emit('player_busted', { message: msg });
               s.emit('user_updated', db.getUser(player.id));
             }
           }
@@ -435,18 +333,24 @@ export class TableManager {
           return;
         }
 
-        const buyIn = Math.round(data.buyIn);
+        const isTonTable = table.currency === 'TON';
+        const buyIn = isTonTable ? parseFloat(data.buyIn.toFixed(4)) : Math.round(data.buyIn);
         if (buyIn < table.minBuyIn || buyIn > table.maxBuyIn) {
+          const unit = isTonTable ? 'TON' : 'фишек';
           socket.emit('error', {
-            message: `Размер бай-ина должен быть от $${table.minBuyIn.toLocaleString()} до $${table.maxBuyIn.toLocaleString()}`
+            message: `Размер бай-ина должен быть от ${table.minBuyIn} до ${table.maxBuyIn} ${unit}`
           });
           return;
         }
 
-        // Atomic chip deduction
-        const success = db.deductChips(userInfo.userId, buyIn);
+        // Atomic deduction based on currency
+        const success = isTonTable
+          ? db.deductTon(userInfo.userId, buyIn)
+          : db.deductChips(userInfo.userId, buyIn);
+
         if (!success) {
-          socket.emit('error', { message: 'Недостаточно фишек на балансе' });
+          const currencyName = isTonTable ? 'TON' : 'фишек';
+          socket.emit('error', { message: `Недостаточно ${currencyName} на балансе` });
           return;
         }
 
@@ -463,7 +367,11 @@ export class TableManager {
 
         if (!joined) {
           // Refund if join failed
-          db.updateChips(userInfo.userId, buyIn);
+          if (isTonTable) {
+            db.updateTonBalance(userInfo.userId, buyIn);
+          } else {
+            db.updateChips(userInfo.userId, buyIn);
+          }
           socket.emit('error', { message: 'Не удалось занять место за столом' });
           return;
         }
@@ -484,8 +392,12 @@ export class TableManager {
 
         const player = table.leaveTable(userInfo.userId);
         if (player) {
-          // Refund remaining chips
-          db.updateChips(userInfo.userId, player.chips);
+          // Refund remaining chips or TON
+          if (table.currency === 'TON') {
+            db.updateTonBalance(userInfo.userId, player.chips);
+          } else {
+            db.updateChips(userInfo.userId, player.chips);
+          }
         }
 
         socket.leave(`table_${table.id}`);
@@ -698,6 +610,48 @@ export class TableManager {
         }
       });
 
+      // Lucky Wheel
+      socket.on('spin_wheel', () => {
+        const userInfo = this.socketUserMap.get(socket.id);
+        if (!userInfo) return;
+
+        const result = db.spinLuckyWheel(userInfo.userId);
+        socket.emit('spin_wheel_result', result);
+        socket.emit('user_updated', db.getUser(userInfo.userId));
+      });
+
+      // TON Wallet & Crypto
+      socket.on('set_ton_wallet', (data: { address: string }) => {
+        const userInfo = this.socketUserMap.get(socket.id);
+        if (!userInfo || !data?.address) return;
+
+        db.setTonWallet(userInfo.userId, data.address);
+        socket.emit('user_updated', db.getUser(userInfo.userId));
+      });
+
+      socket.on('deposit_ton', (data: { amount: number }) => {
+        const userInfo = this.socketUserMap.get(socket.id);
+        if (!userInfo || !data?.amount || data.amount <= 0) return;
+
+        const newBal = db.updateTonBalance(userInfo.userId, data.amount);
+        socket.emit('ton_deposit_success', { amount: data.amount, newBalance: newBal });
+        socket.emit('user_updated', db.getUser(userInfo.userId));
+      });
+
+      socket.on('withdraw_ton', (data: { amount: number; address: string }) => {
+        const userInfo = this.socketUserMap.get(socket.id);
+        if (!userInfo || !data?.amount || data.amount <= 0) return;
+
+        const ok = db.deductTon(userInfo.userId, data.amount);
+        if (!ok) {
+          socket.emit('error', { message: 'Недостаточно TON для вывода' });
+          return;
+        }
+
+        socket.emit('ton_withdraw_success', { amount: data.amount, address: data.address });
+        socket.emit('user_updated', db.getUser(userInfo.userId));
+      });
+
       // Disconnect with Grace Period
       socket.on('disconnect', () => {
         const userInfo = this.socketUserMap.get(socket.id);
@@ -714,7 +668,11 @@ export class TableManager {
               const timer = setTimeout(() => {
                 const player = table.leaveTable(userId);
                 if (player) {
-                  db.updateChips(userId, player.chips);
+                  if (table.currency === 'TON') {
+                    db.updateTonBalance(userId, player.chips);
+                  } else {
+                    db.updateChips(userId, player.chips);
+                  }
                 }
                 this.broadcastTableState(table);
                 this.disconnectTimers.delete(userId);
@@ -741,7 +699,8 @@ export class TableManager {
       playersCount: t.seats.filter(s => s !== null).length,
       status: t.status,
       minStarsRequired: t.minStarsRequired,
-      isVip: t.isVip
+      isVip: t.isVip,
+      currency: t.currency
     }));
   }
 }

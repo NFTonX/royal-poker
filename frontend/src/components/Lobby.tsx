@@ -39,6 +39,9 @@ interface LobbyProps {
   onOpenCosmetics: () => void;
   onOpenSeasonPass: () => void;
   onOpenVipModal?: (table: TableSummary) => void;
+  onOpenWheel?: () => void;
+  onDepositTon?: (amount: number) => void;
+  onWithdrawTon?: (amount: number, address: string) => void;
 }
 
 export type LobbyTab = 'tables' | 'wallet' | 'club' | 'leaderboard' | 'profile';
@@ -61,7 +64,10 @@ export const Lobby: React.FC<LobbyProps> = ({
   onOpenAchievements,
   onOpenCosmetics,
   onOpenSeasonPass,
-  onOpenVipModal
+  onOpenVipModal,
+  onOpenWheel,
+  onDepositTon,
+  onWithdrawTon
 }) => {
   const [activeTab, setActiveTab] = useState<LobbyTab>('tables');
   const [isMuted, setIsMuted] = useState<boolean>(sounds.isMuted());
@@ -121,6 +127,22 @@ export const Lobby: React.FC<LobbyProps> = ({
             </div>
           </button>
 
+          {/* TON Balance Pill */}
+          <button
+            onClick={() => {
+              haptic.light();
+              setActiveTab('wallet');
+            }}
+            className="flex items-center gap-1.5 bg-slate-900/90 hover:bg-slate-800/90 border border-sky-500/40 rounded-full py-1 pl-2.5 pr-1.5 shadow-md transition-all active:scale-95 group"
+            title="Баланс TON"
+          >
+            <span className="text-xs">💎</span>
+            <span className="text-xs font-black text-sky-300">{(user?.tonBalance || 0).toFixed(2)}</span>
+            <div className="w-4 h-4 rounded-full bg-sky-500 flex items-center justify-center text-slate-950 group-hover:scale-110 transition-transform">
+              <Plus className="w-3 h-3 stroke-[3]" />
+            </div>
+          </button>
+
           {/* Sound Mute Toggle */}
           <button
             onClick={handleToggleMute}
@@ -134,6 +156,16 @@ export const Lobby: React.FC<LobbyProps> = ({
 
       {/* Quick Action Feature Buttons Bar */}
       <div className="flex items-center gap-1.5 px-3 py-2 overflow-x-auto scrollbar-none bg-slate-950/60 border-b border-white/[0.04] shrink-0">
+        <button
+          onClick={() => {
+            haptic.light();
+            onOpenWheel?.();
+          }}
+          className="flex items-center gap-1.5 px-3 py-1 rounded-xl bg-gradient-to-r from-pink-500/30 to-purple-600/30 border border-pink-500/50 text-pink-300 text-xs font-black active:scale-95 transition whitespace-nowrap shadow-sm shadow-pink-500/20 animate-pulse"
+        >
+          <span className="text-sm">🎡</span>
+          <span>Колесо Фортуны</span>
+        </button>
         <button
           onClick={onOpenTournaments}
           className="flex items-center gap-1 px-2.5 py-1 rounded-xl bg-gradient-to-r from-amber-500/20 to-amber-600/20 border border-amber-500/40 text-amber-300 text-xs font-bold active:scale-95 transition whitespace-nowrap shadow-sm"
@@ -192,8 +224,10 @@ export const Lobby: React.FC<LobbyProps> = ({
             tables={tables}
             onSelectTable={onSelectTable}
             userChips={user?.chips || 0}
+            userTonBalance={user?.tonBalance || 0}
             totalStarsPurchased={user?.totalStarsPurchased || 0}
             onOpenShop={() => setActiveTab('wallet')}
+            onOpenTonWallet={() => setActiveTab('wallet')}
             onOpenVipModal={onOpenVipModal}
           />
         )}
@@ -203,6 +237,8 @@ export const Lobby: React.FC<LobbyProps> = ({
             user={user}
             onClaimDailyBonus={onClaimDailyBonus}
             onSuccessPurchase={onSuccessPurchase}
+            onDepositTon={onDepositTon}
+            onWithdrawTon={onWithdrawTon}
           />
         )}
 

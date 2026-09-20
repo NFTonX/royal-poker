@@ -179,7 +179,7 @@ export const PlayerSeat: React.FC<PlayerSeatProps> = ({
             </span>
             <div className="flex items-center gap-1">
               <span className="text-xs font-black font-mono text-slate-100 leading-tight">
-                {player.chips.toLocaleString()}
+                {tableState.currency === 'TON' ? `${player.chips.toFixed(2)} TON` : player.chips.toLocaleString()}
               </span>
               <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_5px_rgba(52,211,153,0.8)]" />
             </div>
@@ -315,7 +315,7 @@ export const PlayerSeat: React.FC<PlayerSeatProps> = ({
         </span>
         <div className="flex items-center gap-1">
           <span className="text-[10px] font-bold font-mono text-slate-300 leading-tight">
-            {player.chips.toLocaleString()}
+            {tableState.currency === 'TON' ? `${player.chips.toFixed(2)} TON` : player.chips.toLocaleString()}
           </span>
           <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_4px_rgba(52,211,153,0.8)]" />
         </div>

@@ -108,6 +108,7 @@ export interface TableState {
   theme?: string;
   minStarsRequired?: number;
   isVip?: boolean;
+  currency?: 'CHIPS' | 'TON';
 }
 
 export interface StarsPackage {

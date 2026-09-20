@@ -11,7 +11,8 @@ import {
   HandRecord,
   Tournament,
   CosmeticItem,
-  SeasonPassTier
+  SeasonPassTier,
+  LuckyWheelPrize
 } from './types';
 import { getTelegramUser, getTelegramWebApp, haptic } from './utils/telegram';
 import { sounds } from './utils/sound';
@@ -28,6 +29,7 @@ import { TournamentsView } from './components/TournamentsView';
 import { SeasonPassModal } from './components/SeasonPassModal';
 import { CosmeticsModal } from './components/CosmeticsModal';
 import { TutorialModal } from './components/TutorialModal';
+import { LuckyWheelModal } from './components/LuckyWheelModal';
 import { WifiOff, RefreshCw, Crown, ShoppingCart } from 'lucide-react';
 
 export const App: React.FC = () => {
@@ -38,6 +40,13 @@ export const App: React.FC = () => {
   const [isShopOpen, setIsShopOpen] = useState<boolean>(false);
   const [isReferralOpen, setIsReferralOpen] = useState<boolean>(false);
   const [isJoiningSeat, setIsJoiningSeat] = useState<boolean>(false);
+  const [isWheelOpen, setIsWheelOpen] = useState<boolean>(false);
+  const [spinWheelResult, setSpinWheelResult] = useState<{
+    success: boolean;
+    prize?: LuckyWheelPrize;
+    nextSpinIn: number;
+    message: string;
+  } | null>(null);
   const [vipModalData, setVipModalData] = useState<{
     tableId?: string;
     tableName?: string;
@@ -352,6 +361,31 @@ export const App: React.FC = () => {
       }
     });
 
+    socket.on('spin_wheel_result', (res: { success: boolean; prize?: LuckyWheelPrize; nextSpinIn: number; message: string }) => {
+      setSpinWheelResult(res);
+      if (res.success && res.prize) {
+        haptic.success();
+        confetti({ particleCount: 100, spread: 80, origin: { y: 0.5 } });
+        addToast('success', res.message, 'Колесо Фортуны 🎡');
+      } else if (!res.success) {
+        haptic.warning();
+        addToast('warning', res.message);
+      }
+    });
+
+    socket.on('ton_deposit_success', (data: { balance: number; message: string }) => {
+      haptic.success();
+      confetti({ particleCount: 80, spread: 70, origin: { y: 0.5 } });
+      addToast('success', data.message, 'TON Депозит 💎');
+      setUser(prev => prev ? { ...prev, tonBalance: data.balance } : null);
+    });
+
+    socket.on('ton_withdraw_success', (data: { balance: number; message: string }) => {
+      haptic.success();
+      addToast('success', data.message, 'TON Вывод 💎');
+      setUser(prev => prev ? { ...prev, tonBalance: data.balance } : null);
+    });
+
     socket.on('player_busted', (data: { message: string }) => {
       haptic.warning();
       addToast('warning', data.message, 'Фишки закончились ⭐️');
@@ -439,6 +473,18 @@ export const App: React.FC = () => {
     socketRef.current?.emit('claim_daily_bonus');
   };
 
+  const handleDepositTon = (amount: number) => {
+    socketRef.current?.emit('deposit_ton', { amount });
+  };
+
+  const handleWithdrawTon = (amount: number, address: string) => {
+    socketRef.current?.emit('withdraw_ton', { amount, address });
+  };
+
+  const handleSpinWheel = () => {
+    socketRef.current?.emit('spin_wheel');
+  };
+
   const handleReconnect = () => {
     haptic.medium();
     socketRef.current?.connect();
@@ -481,6 +527,7 @@ export const App: React.FC = () => {
             tableState={tableState}
             currentUserId={tgUser.id}
             userChips={user?.chips || 0}
+            userTonBalance={user?.tonBalance || 0}
             onLeave={handleLeaveTable}
             onJoin={handleJoinSeat}
             onOpenShop={() => setIsShopOpen(true)}
@@ -511,6 +558,9 @@ export const App: React.FC = () => {
           referralCount={referralInfo.referralCount}
           referralEarnings={referralInfo.referralEarnings}
           invitedFriends={referralInfo.invitedFriends}
+          onOpenWheel={() => setIsWheelOpen(true)}
+          onDepositTon={handleDepositTon}
+          onWithdrawTon={handleWithdrawTon}
           onOpenVipModal={(table) => {
             haptic.warning();
             setVipModalData({
@@ -646,6 +696,18 @@ export const App: React.FC = () => {
         referralCount={referralInfo.referralCount}
         referralEarnings={referralInfo.referralEarnings}
         invitedFriends={referralInfo.invitedFriends}
+      />
+
+      {/* Daily Lucky Wheel Modal */}
+      <LuckyWheelModal
+        isOpen={isWheelOpen}
+        onClose={() => {
+          setIsWheelOpen(false);
+          setSpinWheelResult(null);
+        }}
+        onSpin={handleSpinWheel}
+        lastSpinTime={user?.lastSpinTime}
+        spinResult={spinWheelResult}
       />
 
       {/* VIP Access Required Modal */}

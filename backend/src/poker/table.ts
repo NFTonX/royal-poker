@@ -13,6 +13,7 @@ export interface TableConfig {
   turnTimeLimit?: number; // in seconds
   minStarsRequired?: number;
   isVip?: boolean;
+  currency?: 'CHIPS' | 'TON';
 }
 
 export class PokerTable {
@@ -26,6 +27,7 @@ export class PokerTable {
   public turnTimeLimit: number;
   public minStarsRequired: number;
   public isVip: boolean;
+  public currency: 'CHIPS' | 'TON';
 
   public status: TableStatus = 'WAITING';
   public stage: BettingStage = 'PREFLOP';
@@ -62,6 +64,7 @@ export class PokerTable {
     this.turnTimeLimit = config.turnTimeLimit || 15;
     this.minStarsRequired = config.minStarsRequired || 0;
     this.isVip = !!config.isVip;
+    this.currency = config.currency || 'CHIPS';
     this.seats = new Array(this.maxSeats).fill(null);
     this.deck = new Deck();
   }
@@ -152,7 +155,8 @@ export class PokerTable {
       lastAction: this.lastAction,
       handResult: this.handResult,
       minStarsRequired: this.minStarsRequired,
-      isVip: this.isVip
+      isVip: this.isVip,
+      currency: this.currency
     };
   }
 

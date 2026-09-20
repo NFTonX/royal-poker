@@ -3,33 +3,40 @@ import { db } from '../db/database.js';
 import { StarsPackage } from '../types/poker.js';
 
 export const STARS_PACKAGES: Record<string, StarsPackage> = {
+  stars_10: {
+    id: 'stars_10',
+    stars: 10,
+    chips: 2000,
+    title: '2,000 Фишек',
+    badge: '👑 VIP Bronze'
+  },
   stars_50: {
     id: 'stars_50',
     stars: 50,
-    chips: 5000,
-    title: '5,000 Фишек',
-    badge: 'Новичок'
+    chips: 12000,
+    title: '12,000 Фишек',
+    badge: '👑 VIP Silver'
   },
-  stars_150: {
-    id: 'stars_150',
-    stars: 150,
-    chips: 20000,
-    title: '20,000 Фишек',
-    badge: 'Популярно'
+  stars_100: {
+    id: 'stars_100',
+    stars: 100,
+    chips: 30000,
+    title: '30,000 Фишек',
+    badge: '👑 VIP Gold'
+  },
+  stars_250: {
+    id: 'stars_250',
+    stars: 250,
+    chips: 85000,
+    title: '85,000 Фишек',
+    badge: '👑 VIP Platinum'
   },
   stars_500: {
     id: 'stars_500',
     stars: 500,
-    chips: 75000,
-    title: '75,000 Фишек',
-    badge: 'Выгодно'
-  },
-  stars_1000: {
-    id: 'stars_1000',
-    stars: 1000,
     chips: 200000,
     title: '200,000 Фишек',
-    badge: 'VIP Пакет'
+    badge: '👑 VIP Royal Diamond'
   }
 };
 

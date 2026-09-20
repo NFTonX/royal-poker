@@ -107,6 +107,7 @@ export interface TableState {
   theme?: string;
   minStarsRequired?: number;
   isVip?: boolean;
+  currency?: 'CHIPS' | 'TON';
 }
 
 export interface User {
@@ -135,6 +136,9 @@ export interface User {
   };
   handHistory?: HandRecord[];
   totalStarsPurchased?: number;
+  tonBalance?: number;
+  tonWalletAddress?: string;
+  lastSpinTime?: number;
 }
 
 export interface TableSummary {
@@ -149,6 +153,13 @@ export interface TableSummary {
   status: TableStatus;
   minStarsRequired?: number;
   isVip?: boolean;
+  currency?: 'CHIPS' | 'TON';
+}
+
+export interface LuckyWheelPrize {
+  type: 'chips' | 'ton' | 'xp';
+  amount: number;
+  label: string;
 }
 
 export interface StarsPackage {

@@ -9,9 +9,11 @@ interface BuyInModalProps {
   onClose: () => void;
   tableState: TableState;
   userChips: number;
+  userTonBalance?: number;
   selectedSeat: number | null;
   onConfirmJoin: (seatIndex: number, buyIn: number) => void;
   onOpenShop: () => void;
+  onOpenTonWallet?: () => void;
   isJoining?: boolean;
 }
 
@@ -20,28 +22,35 @@ export const BuyInModal: React.FC<BuyInModalProps> = ({
   onClose,
   tableState,
   userChips,
+  userTonBalance = 0,
   selectedSeat,
   onConfirmJoin,
   onOpenShop,
+  onOpenTonWallet,
   isJoining = false
 }) => {
   if (!isOpen) return null;
 
+  const isTon = tableState.currency === 'TON';
+  const currentBalance = isTon ? userTonBalance : userChips;
   const minBuyIn = tableState.minBuyIn;
   const maxBuyIn = tableState.maxBuyIn;
-  const canAfford = userChips >= minBuyIn;
+  const canAfford = currentBalance >= minBuyIn;
 
-  // Maximum chips the player can actually bring based on their wallet and table cap
-  const maxAvailable = Math.min(maxBuyIn, userChips);
+  // Maximum chips or TON the player can actually bring based on their wallet and table cap
+  const maxAvailable = Math.min(maxBuyIn, currentBalance);
 
   const [buyInAmount, setBuyInAmount] = useState<number>(minBuyIn);
 
   useEffect(() => {
     if (canAfford) {
-      // Default to 2x min or max available
-      setBuyInAmount(Math.min(maxAvailable, Math.max(minBuyIn, minBuyIn * 2)));
+      if (isTon) {
+        setBuyInAmount(minBuyIn);
+      } else {
+        setBuyInAmount(Math.min(maxAvailable, Math.max(minBuyIn, minBuyIn * 2)));
+      }
     }
-  }, [minBuyIn, maxAvailable, canAfford]);
+  }, [minBuyIn, maxAvailable, canAfford, isTon]);
 
   // Target seat to occupy
   const targetSeat = selectedSeat !== null ? selectedSeat : tableState.seats.findIndex(s => s === null);
@@ -105,13 +114,13 @@ export const BuyInModal: React.FC<BuyInModalProps> = ({
           <div className="flex items-center justify-between text-xs">
             <span className="text-slate-400">Ваш баланс:</span>
             <span className="font-mono font-bold text-slate-100">
-              ${userChips.toLocaleString()}
+              {isTon ? `💎 ${userTonBalance.toFixed(2)} TON` : `$${userChips.toLocaleString()}`}
             </span>
           </div>
           <div className="flex items-center justify-between text-xs">
             <span className="text-slate-400">Лимиты стола:</span>
             <span className="font-mono text-slate-300">
-              ${minBuyIn.toLocaleString()} — ${maxBuyIn.toLocaleString()}
+              {isTon ? `${minBuyIn} — ${maxBuyIn} TON` : `$${minBuyIn.toLocaleString()} — $${maxBuyIn.toLocaleString()}`}
             </span>
           </div>
         </div>
@@ -122,8 +131,8 @@ export const BuyInModal: React.FC<BuyInModalProps> = ({
             <div className="flex flex-col gap-1.5">
               <div className="flex items-center justify-between">
                 <span className="text-xs text-slate-400 font-medium">Сумма стека:</span>
-                <span className="font-mono font-black text-amber-300 text-lg">
-                  ${buyInAmount.toLocaleString()}
+                <span className={`font-mono font-black text-lg ${isTon ? 'text-cyan-300' : 'text-amber-300'}`}>
+                  {isTon ? `${buyInAmount} TON` : `$${buyInAmount.toLocaleString()}`}
                 </span>
               </div>
 
@@ -131,9 +140,9 @@ export const BuyInModal: React.FC<BuyInModalProps> = ({
                 type="range"
                 min={minBuyIn}
                 max={maxAvailable}
-                step={tableState.bigBlind}
+                step={isTon ? 0.5 : tableState.bigBlind}
                 value={buyInAmount}
-                onChange={(e) => setBuyInAmount(parseInt(e.target.value, 10))}
+                onChange={(e) => setBuyInAmount(parseFloat(e.target.value))}
                 className="w-full poker-slider cursor-pointer accent-amber-500"
               />
 
@@ -144,7 +153,7 @@ export const BuyInModal: React.FC<BuyInModalProps> = ({
                   onClick={() => handlePreset('min')}
                   className="py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs active:scale-95 transition-all border border-slate-700"
                 >
-                  Мин (${minBuyIn.toLocaleString()})
+                  Мин ({isTon ? `${minBuyIn} TON` : `$${minBuyIn.toLocaleString()}`})
                 </button>
                 <button
                   type="button"
@@ -156,9 +165,11 @@ export const BuyInModal: React.FC<BuyInModalProps> = ({
                 <button
                   type="button"
                   onClick={() => handlePreset('max')}
-                  className="py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-300 font-bold text-xs active:scale-95 transition-all border border-amber-500/40"
+                  className={`py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 font-bold text-xs active:scale-95 transition-all border ${
+                    isTon ? 'text-cyan-300 border-cyan-500/40' : 'text-amber-300 border-amber-500/40'
+                  }`}
                 >
-                  Макс (${maxAvailable.toLocaleString()})
+                  Макс ({isTon ? `${maxAvailable} TON` : `$${maxAvailable.toLocaleString()}`})
                 </button>
               </div>
             </div>
@@ -167,7 +178,11 @@ export const BuyInModal: React.FC<BuyInModalProps> = ({
             <button
               onClick={handleConfirm}
               disabled={isJoining || targetSeat === -1}
-              className="w-full py-3 rounded-2xl bg-gradient-to-r from-emerald-500 via-emerald-600 to-teal-600 hover:from-emerald-400 hover:to-teal-500 active:scale-95 text-white font-black text-sm shadow-[0_4px_20px_rgba(16,185,129,0.4)] border border-emerald-400/40 flex items-center justify-center gap-2 transition-all disabled:opacity-50"
+              className={`w-full py-3 rounded-2xl active:scale-95 text-white font-black text-sm shadow-lg flex items-center justify-center gap-2 transition-all disabled:opacity-50 ${
+                isTon
+                  ? 'bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 border border-cyan-400/40 shadow-cyan-950/40'
+                  : 'bg-gradient-to-r from-emerald-500 via-emerald-600 to-teal-600 hover:from-emerald-400 hover:to-teal-500 border border-emerald-400/40 shadow-emerald-950/40'
+              }`}
             >
               {isJoining ? (
                 <>
@@ -176,33 +191,43 @@ export const BuyInModal: React.FC<BuyInModalProps> = ({
                 </>
               ) : (
                 <>
-                  <span>Сесть за стол с ${buyInAmount.toLocaleString()}</span>
+                  <span>Сесть за стол с {isTon ? `${buyInAmount} TON` : `$${buyInAmount.toLocaleString()}`}</span>
                   <ArrowRight className="w-4 h-4" />
                 </>
               )}
             </button>
           </div>
         ) : (
-          /* Not enough chips state */
+          /* Not enough balance state */
           <div className="flex flex-col gap-3 py-1">
             <div className="p-3 rounded-xl bg-rose-950/40 border border-rose-800/60 text-center flex flex-col gap-1">
               <span className="text-xs font-bold text-rose-300">
-                Недостаточно фишек для игры
+                {isTon ? 'Недостаточно TON для игры' : 'Недостаточно фишек для игры'}
               </span>
               <span className="text-[11px] text-rose-200/80">
-                Минимальный бай-ин: ${minBuyIn.toLocaleString()}. У вас: ${userChips.toLocaleString()}.
+                {isTon
+                  ? `Минимальный бай-ин: ${minBuyIn} TON. У вас: ${userTonBalance.toFixed(2)} TON.`
+                  : `Минимальный бай-ин: $${minBuyIn.toLocaleString()}. У вас: $${userChips.toLocaleString()}.`}
               </span>
             </div>
 
             <button
               onClick={() => {
                 onClose();
-                onOpenShop();
+                if (isTon && onOpenTonWallet) {
+                  onOpenTonWallet();
+                } else {
+                  onOpenShop();
+                }
               }}
-              className="w-full py-3 rounded-2xl bg-gradient-to-r from-amber-500 via-amber-400 to-amber-600 hover:from-amber-400 hover:to-amber-500 active:scale-95 text-slate-950 font-black text-xs shadow-lg shadow-amber-950/50 border border-amber-300 flex items-center justify-center gap-2 transition-all"
+              className={`w-full py-3 rounded-2xl active:scale-95 font-black text-xs shadow-lg flex items-center justify-center gap-2 transition-all ${
+                isTon
+                  ? 'bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white border border-cyan-400'
+                  : 'bg-gradient-to-r from-amber-500 via-amber-400 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 border border-amber-300'
+              }`}
             >
               <ShoppingCart className="w-4 h-4" />
-              <span>Пополнить фишки в Магазине ⭐️</span>
+              <span>{isTon ? 'Пополнить баланс TON 💎' : 'Пополнить фишки в Магазине ⭐️'}</span>
             </button>
           </div>
         )}
