@@ -152,8 +152,7 @@ export const WalletView: React.FC<WalletViewProps> = ({
         messages: [
           {
             address: CLUB_TON_WALLET,
-            amount: Math.round(amt * 1e9).toString(), // in nanoTON
-            payload: btoa(`deposit_${user?.id || 'guest'}`)
+            amount: Math.round(amt * 1e9).toString() // in nanoTON
           }
         ]
       };
