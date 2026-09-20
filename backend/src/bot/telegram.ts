@@ -121,7 +121,7 @@ export class TelegramPokerBot {
         '👥 Пригласить друга (+2,500 💰)',
         `https://t.me/share/url?url=${encodeURIComponent(refLink)}&text=${encodeURIComponent('Играй со мной в онлайн-покер в Telegram! Заходи и забирай 3,500 бесплатных фишек ♠️')}`
       ).row();
-      keyboard.url('⭐️ Поддержка', 'https://t.me/BotFather');
+      keyboard.url('💬 Поддержка', 'https://t.me/BtcOfficiaI');
 
       await ctx.reply(
         `👋 Привет, ${user.first_name}!\n\n` +
@@ -132,6 +132,20 @@ export class TelegramPokerBot {
         `👥 <b>Приглашай друзей</b> и получай <b>+2,500 фишек</b> за каждого!\n\n` +
         `Твоя реферальная ссылка:\n<code>${refLink}</code>\n\n` +
         `Нажми кнопку <b>«Играть в Покер»</b> ниже для старта!`,
+        {
+          parse_mode: 'HTML',
+          reply_markup: keyboard
+        }
+      );
+    });
+
+    // /support and /help commands
+    this.bot.command(['support', 'help'], async (ctx) => {
+      const keyboard = new InlineKeyboard().url('💬 Написать в поддержку', 'https://t.me/BtcOfficiaI');
+      await ctx.reply(
+        `🤝 <b>Служба поддержки Royal Poker Club</b>\n\n` +
+        `По всем вопросам работы клуба, турниров, депозитов и вывода средств пишите нашему администратору:\n` +
+        `👉 @BtcOfficiaI`,
         {
           parse_mode: 'HTML',
           reply_markup: keyboard

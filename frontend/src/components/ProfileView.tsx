@@ -1,6 +1,7 @@
 import React from 'react';
 import { User } from '../types';
-import { Crown, Trophy, Target, Gift, Users, ShieldCheck, Sparkles, Flame, History, Award, Shirt, Star } from 'lucide-react';
+import { Crown, Trophy, Target, Gift, Users, ShieldCheck, Sparkles, Flame, History, Award, Shirt, Star, MessageCircleQuestion } from 'lucide-react';
+import { getTelegramWebApp, haptic } from '../utils/telegram';
 
 interface ProfileViewProps {
   user: User | null;
@@ -269,6 +270,34 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
           className="px-3.5 py-2 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 active:scale-95 text-white font-bold text-xs shadow-md border border-emerald-400/40 transition-all"
         >
           Забрать 🎁
+        </button>
+      </div>
+
+      {/* Support Card */}
+      <div className="glass-card rounded-2xl p-3.5 flex items-center justify-between border border-blue-500/20">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-blue-950/80 border border-blue-500/40 flex items-center justify-center">
+            <MessageCircleQuestion className="w-5 h-5 text-blue-400" />
+          </div>
+          <div className="flex flex-col">
+            <span className="font-bold text-xs text-slate-100">Служба Поддержки 24/7</span>
+            <span className="text-[11px] text-slate-400">Прямой чат с администратором</span>
+          </div>
+        </div>
+
+        <button
+          onClick={() => {
+            haptic.medium();
+            const tg = getTelegramWebApp();
+            if (tg?.openTelegramLink) {
+              tg.openTelegramLink('https://t.me/BtcOfficiaI');
+            } else {
+              window.open('https://t.me/BtcOfficiaI', '_blank');
+            }
+          }}
+          className="px-3.5 py-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 active:scale-95 text-white font-bold text-xs shadow-md border border-blue-400/40 transition-all flex items-center gap-1.5"
+        >
+          <span>Написать</span>
         </button>
       </div>
 
