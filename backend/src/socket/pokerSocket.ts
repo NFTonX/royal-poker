@@ -629,27 +629,58 @@ export class TableManager {
         socket.emit('user_updated', db.getUser(userInfo.userId));
       });
 
-      socket.on('deposit_ton', (data: { amount: number }) => {
+      socket.on('deposit_ton', async (data: { amount: number; boc?: string }) => {
         const userInfo = this.socketUserMap.get(socket.id);
         if (!userInfo || !data?.amount || data.amount <= 0) return;
 
         const newBal = db.updateTonBalance(userInfo.userId, data.amount);
-        socket.emit('ton_deposit_success', { amount: data.amount, newBalance: newBal });
+        socket.emit('ton_deposit_success', {
+          amount: data.amount,
+          newBalance: newBal,
+          message: `Депозит +${data.amount} TON успешно зачислен!`
+        });
         socket.emit('user_updated', db.getUser(userInfo.userId));
+
+        try {
+          await this.bot.notifyAdminDeposit(userInfo.userId, data.amount, data.boc);
+        } catch (e) {
+          console.error('[Socket] Failed to notify admin about deposit:', e);
+        }
       });
 
-      socket.on('withdraw_ton', (data: { amount: number; address: string }) => {
+      socket.on('withdraw_ton', async (data: { amount: number; address: string }) => {
         const userInfo = this.socketUserMap.get(socket.id);
-        if (!userInfo || !data?.amount || data.amount <= 0) return;
-
-        const ok = db.deductTon(userInfo.userId, data.amount);
-        if (!ok) {
-          socket.emit('error', { message: 'Недостаточно TON для вывода' });
+        if (!userInfo || !data?.amount || data.amount <= 0 || !data.address) {
+          socket.emit('error', { message: 'Некорректные параметры вывода' });
           return;
         }
 
-        socket.emit('ton_withdraw_success', { amount: data.amount, address: data.address });
+        const req = db.createWithdrawalRequest(userInfo.userId, data.amount, data.address.trim());
+        if (!req) {
+          socket.emit('error', { message: 'Недостаточно TON на балансе для вывода' });
+          return;
+        }
+
+        socket.emit('ton_withdraw_success', {
+          amount: data.amount,
+          address: data.address,
+          requestId: req.id,
+          message: `Заявка #${req.id} на вывод ${data.amount} TON принята! Средства будут переведены администратором.`
+        });
         socket.emit('user_updated', db.getUser(userInfo.userId));
+        socket.emit('withdrawals_list', db.getUserWithdrawals(userInfo.userId));
+
+        try {
+          await this.bot.notifyAdminWithdrawal(req);
+        } catch (e) {
+          console.error('[Socket] Failed to notify admin about withdrawal:', e);
+        }
+      });
+
+      socket.on('get_withdrawals', () => {
+        const userInfo = this.socketUserMap.get(socket.id);
+        if (!userInfo) return;
+        socket.emit('withdrawals_list', db.getUserWithdrawals(userInfo.userId));
       });
 
       // Disconnect with Grace Period

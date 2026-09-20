@@ -473,8 +473,8 @@ export const App: React.FC = () => {
     socketRef.current?.emit('claim_daily_bonus');
   };
 
-  const handleDepositTon = (amount: number) => {
-    socketRef.current?.emit('deposit_ton', { amount });
+  const handleDepositTon = (amount: number, boc?: string) => {
+    socketRef.current?.emit('deposit_ton', { amount, boc });
   };
 
   const handleWithdrawTon = (amount: number, address: string) => {

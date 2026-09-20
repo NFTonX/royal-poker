@@ -8,7 +8,7 @@ interface WalletViewProps {
   user: User | null;
   onClaimDailyBonus: () => void;
   onSuccessPurchase?: () => void;
-  onDepositTon?: (amount: number) => void;
+  onDepositTon?: (amount: number, boc?: string) => void;
   onWithdrawTon?: (amount: number, address: string) => void;
 }
 
@@ -125,47 +125,55 @@ export const WalletView: React.FC<WalletViewProps> = ({
     setTimeout(() => setIsClaiming(false), 2000);
   };
 
+  const CLUB_TON_WALLET = 'UQBxVtuIc5jNmjJqMohUm9DpgJaOozq1OalNaGP5KfruUW1y';
+
   const handleTonDeposit = async () => {
     const amt = parseFloat(depositAmount);
     if (isNaN(amt) || amt <= 0) {
-      setErrorMsg('Введите корректную сумму TON');
+      setErrorMsg('Введите корректную сумму TON (минимум 0.5 TON)');
       return;
     }
+
+    if (!wallet) {
+      tonConnectUI.openModal();
+      setErrorMsg('Пожалуйста, сначала подключите ваш TON-кошелек');
+      return;
+    }
+
     haptic.medium();
     setIsProcessingTon(true);
     setErrorMsg(null);
     setSuccessMsg(null);
 
     try {
-      if (wallet) {
-        // Send transaction through TON Connect
-        const transaction = {
-          validUntil: Math.floor(Date.now() / 1000) + 360,
-          messages: [
-            {
-              address: 'EQA0i8-CdGn-igweuhbvydzWKn0YNio8--TuPq2fqW50G5wW', // Hot wallet address
-              amount: (amt * 1e9).toString(), // nanoTON
-              payload: btoa(`deposit_${user?.id || 'guest'}`)
-            }
-          ]
-        };
-        await tonConnectUI.sendTransaction(transaction);
-      }
+      // Real transaction through TON Connect to Club Wallet
+      const transaction = {
+        validUntil: Math.floor(Date.now() / 1000) + 360,
+        messages: [
+          {
+            address: CLUB_TON_WALLET,
+            amount: Math.round(amt * 1e9).toString(), // in nanoTON
+            payload: btoa(`deposit_${user?.id || 'guest'}`)
+          }
+        ]
+      };
+
+      const result = await tonConnectUI.sendTransaction(transaction);
       
-      // Credit in game
-      if (onDepositTon) onDepositTon(amt);
-      setSuccessMsg(`Баланс успешно пополнен на ${amt} TON!`);
-      haptic.success();
-    } catch (err: any) {
-      console.error('TON deposit error:', err);
-      // Fallback: If wallet was rejected or demo mode
-      if (onDepositTon) {
-        onDepositTon(amt);
-        setSuccessMsg(`Тестовый депозит: +${amt} TON зачислено на игровой баланс!`);
+      // ONLY credit when transaction has been confirmed and BOC returned
+      if (result && result.boc) {
+        if (onDepositTon) onDepositTon(amt, result.boc);
+        setSuccessMsg(`Транзакция отправлена в блокчейн! Баланс пополнен на +${amt} TON.`);
         haptic.success();
       } else {
-        setErrorMsg('Транзакция отменена');
+        setErrorMsg('Транзакция не была подтверждена в кошельке');
+        haptic.error();
       }
+    } catch (err: any) {
+      console.error('TON deposit error:', err);
+      // NO FAKE FALLBACK! User canceled or failed transaction
+      setErrorMsg(err?.message && !err.message.includes('reject') ? `Ошибка: ${err.message}` : 'Транзакция отменена в кошельке. Баланс не изменен.');
+      haptic.error();
     } finally {
       setIsProcessingTon(false);
     }
@@ -173,17 +181,17 @@ export const WalletView: React.FC<WalletViewProps> = ({
 
   const handleTonWithdraw = () => {
     const amt = parseFloat(withdrawAmount);
-    if (isNaN(amt) || amt <= 0) {
-      setErrorMsg('Введите корректную сумму для вывода');
+    if (isNaN(amt) || amt < 0.5) {
+      setErrorMsg('Минимальная сумма для вывода: 0.5 TON');
       return;
     }
     if ((user?.tonBalance || 0) < amt) {
-      setErrorMsg('Недостаточно TON на игровом балансе');
+      setErrorMsg(`Недостаточно TON на игровом балансе (у вас ${(user?.tonBalance || 0).toFixed(2)} TON)`);
       return;
     }
     const targetAddress = withdrawAddress.trim() || (wallet ? wallet.account.address : '');
     if (!targetAddress) {
-      setErrorMsg('Укажите адрес кошелька TON');
+      setErrorMsg('Укажите адрес вашего кошелька TON или подключите кошелек');
       return;
     }
 
@@ -193,7 +201,7 @@ export const WalletView: React.FC<WalletViewProps> = ({
 
     if (onWithdrawTon) {
       onWithdrawTon(amt, targetAddress);
-      setSuccessMsg(`Заявка на вывод ${amt} TON на адрес ${targetAddress.slice(0, 6)}...${targetAddress.slice(-4)} принята!`);
+      setSuccessMsg(`Заявка на вывод ${amt} TON создана и отправлена администратору! Средства будут переведены после подтверждения.`);
       haptic.success();
     }
   };
@@ -431,8 +439,14 @@ export const WalletView: React.FC<WalletViewProps> = ({
                 disabled={isProcessingTon}
                 className="w-full py-2.5 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-black text-xs shadow-md border border-cyan-400/40 active:scale-95 transition disabled:opacity-50 flex items-center justify-center gap-1.5"
               >
-                {isProcessingTon ? <Loader2 className="w-4 h-4 animate-spin" /> : <span>Пополнить {depositAmount} TON</span>}
+                {isProcessingTon ? <Loader2 className="w-4 h-4 animate-spin" /> : <span>Оплатить {depositAmount} TON через кошелек</span>}
               </button>
+
+              <div className="p-2.5 rounded-xl bg-slate-900/80 border border-white/[0.06] flex flex-col gap-1 text-[10px] text-slate-400">
+                <span className="font-semibold text-cyan-300">Прямой перевод на кошелек клуба:</span>
+                <span className="font-mono text-white select-all break-all">{CLUB_TON_WALLET}</span>
+                <span className="text-slate-500">Комментарий к переводу: <code className="text-cyan-400">deposit_{user?.id || 'id'}</code></span>
+              </div>
             </div>
 
             {/* Withdraw Box */}
@@ -442,7 +456,7 @@ export const WalletView: React.FC<WalletViewProps> = ({
                 <span>Вывести TON</span>
               </div>
               <p className="text-[11px] text-slate-400">
-                Вывод на любой кошелек TON (Tonkeeper, Telegram Wallet).
+                Заявка на вывод отправляется администратору. Средства поступают на кошелек после подтверждения.
               </p>
 
               <input
@@ -455,19 +469,33 @@ export const WalletView: React.FC<WalletViewProps> = ({
                 className="w-full py-2 px-3 rounded-xl bg-slate-900 border border-white/10 text-white text-xs font-mono focus:outline-none focus:border-blue-400"
               />
 
-              <input
-                type="text"
-                value={withdrawAddress}
-                onChange={(e) => setWithdrawAddress(e.target.value)}
-                placeholder={wallet ? `Кошелек: ${wallet.account.address.slice(0, 6)}...` : 'Адрес кошелька (UQ...)'}
-                className="w-full py-2 px-3 rounded-xl bg-slate-900 border border-white/10 text-white text-xs font-mono focus:outline-none focus:border-blue-400"
-              />
+              <div className="flex flex-col gap-1">
+                <input
+                  type="text"
+                  value={withdrawAddress}
+                  onChange={(e) => setWithdrawAddress(e.target.value)}
+                  placeholder="Адрес кошелька (UQ... или EQ...)"
+                  className="w-full py-2 px-3 rounded-xl bg-slate-900 border border-white/10 text-white text-xs font-mono focus:outline-none focus:border-blue-400"
+                />
+                {wallet && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      haptic.light();
+                      setWithdrawAddress(wallet.account.address);
+                    }}
+                    className="text-[10px] text-cyan-400 hover:text-cyan-300 text-left font-semibold underline decoration-dashed"
+                  >
+                    Вставить мой подключенный кошелек
+                  </button>
+                )}
+              </div>
 
               <button
                 onClick={handleTonWithdraw}
                 className="w-full py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-black text-xs shadow-md border border-blue-400/40 active:scale-95 transition flex items-center justify-center gap-1.5"
               >
-                <span>Вывести {withdrawAmount} TON</span>
+                <span>Отправить заявку на вывод {withdrawAmount} TON</span>
               </button>
             </div>
           </div>

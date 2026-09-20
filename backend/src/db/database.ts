@@ -7,7 +7,8 @@ import {
   Achievement,
   UserAchievement,
   CosmeticItem,
-  SeasonPassTier
+  SeasonPassTier,
+  WithdrawalRequest
 } from '../types/poker.js';
 
 export interface UserRecord {
@@ -395,13 +396,16 @@ export const SEASON_TIERS: SeasonPassTier[] = [
 
 export class Database {
   private filePath: string;
+  private withdrawalsPath: string;
   private users: Map<string, UserRecord> = new Map();
+  private withdrawalRequests: Map<string, WithdrawalRequest> = new Map();
 
   constructor(dataDir: string = './data') {
     if (!fs.existsSync(dataDir)) {
       fs.mkdirSync(dataDir, { recursive: true });
     }
     this.filePath = path.join(dataDir, 'users.json');
+    this.withdrawalsPath = path.join(dataDir, 'withdrawals.json');
     this.load();
   }
 
@@ -412,6 +416,13 @@ export class Database {
         const data = JSON.parse(raw) as UserRecord[];
         for (const user of data) {
           this.users.set(user.id, user);
+        }
+      }
+      if (fs.existsSync(this.withdrawalsPath)) {
+        const rawW = fs.readFileSync(this.withdrawalsPath, 'utf-8');
+        const dataW = JSON.parse(rawW) as WithdrawalRequest[];
+        for (const req of dataW) {
+          this.withdrawalRequests.set(req.id, req);
         }
       }
     } catch (err) {
@@ -425,6 +436,11 @@ export class Database {
       const tempPath = `${this.filePath}.tmp`;
       fs.writeFileSync(tempPath, JSON.stringify(data, null, 2), 'utf-8');
       fs.renameSync(tempPath, this.filePath);
+
+      const dataW = Array.from(this.withdrawalRequests.values());
+      const tempPathW = `${this.withdrawalsPath}.tmp`;
+      fs.writeFileSync(tempPathW, JSON.stringify(dataW, null, 2), 'utf-8');
+      fs.renameSync(tempPathW, this.withdrawalsPath);
     } catch (err) {
       console.error('Failed to save database:', err);
     }
@@ -995,6 +1011,59 @@ export class Database {
     if (!user) return;
     user.tonWalletAddress = address;
     this.save();
+  }
+
+  public createWithdrawalRequest(userId: string, amount: number, address: string): WithdrawalRequest | null {
+    const user = this.users.get(userId);
+    if (!user || (user.tonBalance || 0) < amount || amount <= 0) return null;
+    user.tonBalance = parseFloat(((user.tonBalance || 0) - amount).toFixed(4));
+    const req: WithdrawalRequest = {
+      id: `w_${Date.now().toString(36)}_${Math.random().toString(36).substring(2, 5)}`,
+      userId,
+      username: user.username,
+      firstName: user.firstName,
+      amount,
+      address,
+      status: 'PENDING',
+      createdAt: Date.now()
+    };
+    this.withdrawalRequests.set(req.id, req);
+    this.save();
+    return req;
+  }
+
+  public approveWithdrawal(requestId: string): WithdrawalRequest | null {
+    const req = this.withdrawalRequests.get(requestId);
+    if (!req || req.status !== 'PENDING') return null;
+    req.status = 'APPROVED';
+    req.processedAt = Date.now();
+    this.save();
+    return req;
+  }
+
+  public rejectWithdrawal(requestId: string): WithdrawalRequest | null {
+    const req = this.withdrawalRequests.get(requestId);
+    if (!req || req.status !== 'PENDING') return null;
+    req.status = 'REJECTED';
+    req.processedAt = Date.now();
+    const user = this.users.get(req.userId);
+    if (user) {
+      user.tonBalance = parseFloat(((user.tonBalance || 0) + req.amount).toFixed(4));
+    }
+    this.save();
+    return req;
+  }
+
+  public getUserWithdrawals(userId: string): WithdrawalRequest[] {
+    return Array.from(this.withdrawalRequests.values())
+      .filter(r => r.userId === userId)
+      .sort((a, b) => b.createdAt - a.createdAt);
+  }
+
+  public getPendingWithdrawals(): WithdrawalRequest[] {
+    return Array.from(this.withdrawalRequests.values())
+      .filter(r => r.status === 'PENDING')
+      .sort((a, b) => b.createdAt - a.createdAt);
   }
 
   public spinLuckyWheel(id: string): {

@@ -261,3 +261,15 @@ export interface Tournament {
   nextBlindTime: number;
   winnerId?: string;
 }
+
+export interface WithdrawalRequest {
+  id: string;
+  userId: string;
+  username?: string;
+  firstName?: string;
+  amount: number;
+  address: string;
+  status: 'PENDING' | 'APPROVED' | 'REJECTED';
+  createdAt: number;
+  processedAt?: number;
+}

@@ -1,6 +1,9 @@
 import { Bot, InlineKeyboard } from 'grammy';
 import { db } from '../db/database.js';
-import { StarsPackage } from '../types/poker.js';
+import { StarsPackage, WithdrawalRequest } from '../types/poker.js';
+
+export const ADMIN_ID = process.env.ADMIN_ID || '6968710985';
+export const CLUB_TON_WALLET = process.env.TON_WALLET_ADDRESS || 'UQBxVtuIc5jNmjJqMohUm9DpgJaOozq1OalNaGP5KfruUW1y';
 
 export const STARS_PACKAGES: Record<string, StarsPackage> = {
   stars_10: {
@@ -192,10 +195,136 @@ export class TelegramPokerBot {
       }
     });
 
+    // Admin Command: /admin or /withdrawals
+    this.bot.command(['admin', 'withdrawals'], async (ctx) => {
+      if (ctx.from?.id.toString() !== ADMIN_ID) {
+        await ctx.reply('У вас нет прав администратора.');
+        return;
+      }
+
+      const pending = db.getPendingWithdrawals();
+      if (pending.length === 0) {
+        await ctx.reply('✅ Нет активных заявок на вывод TON.');
+        return;
+      }
+
+      for (const req of pending) {
+        const text = `🔔 <b>Заявка на вывод:</b>\n\n` +
+          `🆔 <code>#${req.id}</code>\n` +
+          `👤 <b>${req.firstName || 'Игрок'}</b> ${req.username ? '(@' + req.username + ')' : ''} [ID: <code>${req.userId}</code>]\n` +
+          `💎 Сумма: <b>${req.amount} TON</b>\n` +
+          `📍 Адрес: <code>${req.address}</code>\n` +
+          `⏰ Создана: ${new Date(req.createdAt).toLocaleString('ru-RU')}`;
+
+        const kb = new InlineKeyboard()
+          .text('✅ Выплачено', `w_app_${req.id}`)
+          .text('❌ Отклонить', `w_rej_${req.id}`);
+
+        await ctx.reply(text, { parse_mode: 'HTML', reply_markup: kb });
+      }
+    });
+
+    // Admin approve withdrawal callback
+    this.bot.callbackQuery(/^w_app_(.+)$/, async (ctx) => {
+      if (ctx.from.id.toString() !== ADMIN_ID) {
+        await ctx.answerCallbackQuery({ text: 'Доступ запрещен' });
+        return;
+      }
+      const reqId = ctx.match[1];
+      const req = db.approveWithdrawal(reqId);
+      if (req) {
+        await ctx.editMessageText(
+          (ctx.callbackQuery.message?.text || '') + `\n\n✅ <b>ВЫПЛАЧЕНО администратором</b> (${new Date().toLocaleString('ru-RU')})`,
+          { parse_mode: 'HTML' }
+        );
+        await ctx.answerCallbackQuery({ text: `Вывод #${reqId} подтвержден!` });
+        try {
+          await this.bot.api.sendMessage(
+            parseInt(req.userId, 10),
+            `✅ <b>Ваш вывод ${req.amount} TON успешно отправлен!</b>\n\n` +
+            `📍 Адрес получения: <code>${req.address}</code>\n\n` +
+            `Спасибо за игру в Royal Poker Club! ♠️`,
+            { parse_mode: 'HTML' }
+          );
+        } catch (e) {
+          // ignore
+        }
+      } else {
+        await ctx.answerCallbackQuery({ text: 'Заявка уже обработана или не найдена' });
+      }
+    });
+
+    // Admin reject withdrawal callback
+    this.bot.callbackQuery(/^w_rej_(.+)$/, async (ctx) => {
+      if (ctx.from.id.toString() !== ADMIN_ID) {
+        await ctx.answerCallbackQuery({ text: 'Доступ запрещен' });
+        return;
+      }
+      const reqId = ctx.match[1];
+      const req = db.rejectWithdrawal(reqId);
+      if (req) {
+        await ctx.editMessageText(
+          (ctx.callbackQuery.message?.text || '') + `\n\n❌ <b>ОТКЛОНЕНО</b>. Средства (${req.amount} TON) возвращены игроку.`,
+          { parse_mode: 'HTML' }
+        );
+        await ctx.answerCallbackQuery({ text: `Вывод #${reqId} отклонен, баланс возвращен` });
+        try {
+          await this.bot.api.sendMessage(
+            parseInt(req.userId, 10),
+            `❌ <b>Ваша заявка на вывод ${req.amount} TON отклонена администратором.</b>\n\n` +
+            `Средства (${req.amount} TON) возвращены на ваш игровой баланс.`,
+            { parse_mode: 'HTML' }
+          );
+        } catch (e) {
+          // ignore
+        }
+      } else {
+        await ctx.answerCallbackQuery({ text: 'Заявка уже обработана или не найдена' });
+      }
+    });
+
     // Global error handler
     this.bot.catch((err) => {
       console.error('[Bot] Grammy error:', err.message || err);
     });
+  }
+
+  public async notifyAdminWithdrawal(req: WithdrawalRequest): Promise<void> {
+    try {
+      const text = `🔔 <b>Новая заявка на вывод TON!</b>\n\n` +
+        `🆔 Заявка: <code>#${req.id}</code>\n` +
+        `👤 Игрок: <b>${req.firstName || 'Игрок'}</b> ${req.username ? '(@' + req.username + ')' : ''} [ID: <code>${req.userId}</code>]\n` +
+        `💎 Сумма: <b>${req.amount} TON</b>\n` +
+        `📍 Адрес: <code>${req.address}</code>\n` +
+        `⏰ Создана: ${new Date(req.createdAt).toLocaleString('ru-RU')}`;
+
+      const kb = new InlineKeyboard()
+        .text('✅ Выплачено', `w_app_${req.id}`)
+        .text('❌ Отклонить', `w_rej_${req.id}`);
+
+      await this.bot.api.sendMessage(parseInt(ADMIN_ID, 10), text, {
+        parse_mode: 'HTML',
+        reply_markup: kb
+      });
+    } catch (err) {
+      console.error('[Bot] Failed to send admin withdrawal notification:', err);
+    }
+  }
+
+  public async notifyAdminDeposit(userId: string, amount: number, boc?: string): Promise<void> {
+    try {
+      const user = db.getUser(userId);
+      const text = `💰 <b>Новый депозит TON!</b>\n\n` +
+        `👤 Игрок: <b>${user?.firstName || 'Игрок'}</b> ${user?.username ? '(@' + user.username + ')' : ''} [ID: <code>${userId}</code>]\n` +
+        `💎 Сумма: <b>+${amount} TON</b>\n` +
+        `🏦 Кошелёк клуба: <code>${CLUB_TON_WALLET}</code>\n` +
+        (boc ? `📦 BOC: <code>${boc.slice(0, 32)}...</code>\n` : '') +
+        `⏰ Время: ${new Date().toLocaleString('ru-RU')}`;
+
+      await this.bot.api.sendMessage(parseInt(ADMIN_ID, 10), text, { parse_mode: 'HTML' });
+    } catch (err) {
+      console.error('[Bot] Failed to send admin deposit notification:', err);
+    }
   }
 
   public async createStarsInvoiceLink(userId: string, packageId: string): Promise<string> {

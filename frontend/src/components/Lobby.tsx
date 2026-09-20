@@ -40,7 +40,7 @@ interface LobbyProps {
   onOpenSeasonPass: () => void;
   onOpenVipModal?: (table: TableSummary) => void;
   onOpenWheel?: () => void;
-  onDepositTon?: (amount: number) => void;
+  onDepositTon?: (amount: number, boc?: string) => void;
   onWithdrawTon?: (amount: number, address: string) => void;
 }
 
